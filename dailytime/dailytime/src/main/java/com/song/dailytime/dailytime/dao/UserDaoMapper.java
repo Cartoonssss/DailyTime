@@ -10,4 +10,6 @@ import org.springframework.stereotype.Repository;
 public interface UserDaoMapper {
 
     int registerOneUserRecord(User user);
+
+    User userLogin(String username,String password);
 }

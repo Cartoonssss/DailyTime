@@ -16,4 +16,8 @@
     <insert id="registerOneUserRecord" parameterType="com.song.dailytime.dailytime.Entity.User" useGeneratedKeys="true" keyProperty="id">
         insert into user (username,password,email,telephone,registerTime) values (#{username},#{password},#{email},#{telephone},#{registerTime});
     </insert>
+
+    <select id="userLogin" resultType="com.song.dailytime.dailytime.Entity.User">
+        select * from user where username=(#{username}) and password=(#{password});
+    </select>
 </mapper>

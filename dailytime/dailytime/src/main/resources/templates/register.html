@@ -68,7 +68,7 @@
                                         onclick="registerOneUser()">注 册</button>
                             </div>
                             <div class="text-center mt-4 font-weight-light">
-                                已经账户? <a href="login.html" class="text-primary">Login</a>
+                                已有账户? <a href="../templates/login.html" class="text-primary" onclick="login()">Login</a>
                             </div>
                         </form>
                     </div>
@@ -96,7 +96,9 @@
 <!-- endinject -->
 <script>
     var _response = $('#response-panel');
-
+    function login() {
+        $(location).attr('href', 'http://localhost:8080/login.html');
+    }
     function registerOneUser() {
         var dataSet = new Object();
         var data= {

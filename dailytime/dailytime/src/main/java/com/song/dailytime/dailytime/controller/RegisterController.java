@@ -1,6 +1,8 @@
 package com.song.dailytime.dailytime.controller;
 
 import com.song.dailytime.dailytime.Entity.User;
+import com.song.dailytime.dailytime.common.ResponseStatus;
+import com.song.dailytime.dailytime.common.RestResponse;
 import com.song.dailytime.dailytime.service.RegisterUser;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -19,17 +21,17 @@ public class RegisterController {
     @Autowired
     private RegisterUser registerUser;
 
-    @RequestMapping(value = "/", method=RequestMethod.GET)
+    @RequestMapping(value = "/", method = RequestMethod.GET)
     public String home() {
         return "register";
     }
 
     @PostMapping(value = "/register")
-    public String registerOneUserRecord(@RequestBody Map<String,String> param){
-        String username=param.get("username");
-        String password=param.get("password");
-        String email=param.get("email");
-        String telephone=param.get("telephone");
+    public String registerOneUserRecord(@RequestBody Map<String, String> param) {
+        String username = param.get("username");
+        String password = param.get("password");
+        String email = param.get("email");
+        String telephone = param.get("telephone");
         logger.info("=====username=====" + username);
         logger.info("=====password=====" + password);
         logger.info("=====email=====" + email);
@@ -40,6 +42,25 @@ public class RegisterController {
         user.setEmail(email);
         user.setTelephone(telephone);
         registerUser.registerOneUserRecord(user);
-        return "user";
+        return "login";
+    }
+
+    @PostMapping(value = "/login")
+    @ResponseBody
+    public RestResponse UserLogin(@RequestBody Map<String, String> param) {
+        RestResponse<User> restResponse = new RestResponse();
+        String username = param.get("username");
+        String password = param.get("password");
+        logger.info("=====username=====" + username);
+        logger.info("=====password=====" + password);
+        User user = registerUser.userLogin(username, password);
+        if (user != null) {
+            restResponse.setData(user).setStatus(ResponseStatus.Ok);
+        } else {
+            String msg = "login failed";
+            restResponse.setMsg(msg).setStatus(ResponseStatus.Error);
+            logger.error(msg);
+        }
+        return restResponse;
     }
 }

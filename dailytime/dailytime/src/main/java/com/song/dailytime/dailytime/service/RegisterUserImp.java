@@ -14,4 +14,9 @@ public class RegisterUserImp implements RegisterUser {
     public int registerOneUserRecord(User user) {
         return userDao.registerOneUserRecord(user);
     }
+
+    @Override
+    public User userLogin(String username, String password) {
+        return userDao.userLogin(username,password);
+    }
 }
