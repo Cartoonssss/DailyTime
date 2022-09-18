@@ -4,24 +4,20 @@ import com.song.dailytime.dailytime.Entity.User;
 import com.song.dailytime.dailytime.common.ResponseStatus;
 import com.song.dailytime.dailytime.common.RestResponse;
 import com.song.dailytime.dailytime.service.RegisterUser;
-import freemarker.template.utility.DateUtil;
-import org.json.JSONException;
-import org.json.JSONObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
-import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 import java.util.Map;
 
 @Controller
-public class RegisterController {
-    private static Logger logger = LoggerFactory.getLogger(RegisterController.class);
+public class UserController {
+    private static Logger logger = LoggerFactory.getLogger(UserController.class);
     @Autowired
     private RegisterUser registerUser;
 
@@ -78,6 +74,19 @@ public class RegisterController {
             String msg = "login failed";
             restResponse.setMsg(msg).setStatus(ResponseStatus.Error);
             logger.error(msg);
+        }
+        return restResponse;
+    }
+    @PostMapping(value = "/userList")
+    @ResponseBody
+    public RestResponse queryUserList(){
+        RestResponse<List<User>> restResponse=new RestResponse<>();
+        List<User> users = registerUser.queryUserList();
+        if (users.size()>0){
+            restResponse.setData(users).setStatus(ResponseStatus.Ok);
+        }else {
+            String msg="暂无用户";
+            restResponse.setMsg(msg).setStatus(ResponseStatus.Error);
         }
         return restResponse;
     }

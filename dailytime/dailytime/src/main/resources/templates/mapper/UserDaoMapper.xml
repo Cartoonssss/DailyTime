@@ -20,4 +20,8 @@
     <select id="userLogin" resultType="com.song.dailytime.dailytime.Entity.User">
         select * from user where username=(#{username}) and password=(#{password});
     </select>
+
+    <select id="queryUserList" resultType="java.util.HashMap">
+        select * from user;
+    </select>
 </mapper>
