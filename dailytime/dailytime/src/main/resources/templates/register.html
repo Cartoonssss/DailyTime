@@ -2,144 +2,110 @@
 <html lang="en">
 
 <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>RoyalUI Admin</title>
-    <!-- plugins:css -->
-    <link rel="stylesheet" href="../static/vendors/ti-icons/css/themify-icons.css">
-    <link rel="stylesheet" href="../static/vendors/base/vendor.bundle.base.css">
-    <!-- endinject -->
-    <!-- plugin css for this page -->
-    <!-- End plugin css for this page -->
-    <!-- inject:css -->
-    <link rel="stylesheet" href="../static/css/style.css">
-    <!-- endinject -->
-    <link rel="shortcut icon" href="../static/images/favicon.png"/>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Skydash Admin</title>
+  <!-- plugins:css -->
+  <link rel="stylesheet" href="../static/vendors/feather/feather.css">
+  <link rel="stylesheet" href="../static/vendors/ti-icons/css/themify-icons.css">
+  <link rel="stylesheet" href="../static/vendors/css/vendor.bundle.base.css">
+  <link rel="stylesheet" href="../static/css/vertical-layout-light/style.css">
+  <link rel="shortcut icon" href="../static/images/favicon.png" />
 </head>
 
 <body>
-<div class="container-scroller">
+  <div class="container-scroller">
     <div class="container-fluid page-body-wrapper full-page-wrapper">
-        <div class="content-wrapper d-flex align-items-center auth px-0">
-            <div class="row w-100 mx-0">
-                <div class="col-lg-4 mx-auto">
-                    <div class="auth-form-light text-left py-5 px-4 px-sm-5">
-                        <div class="brand-logo">
-                            <img src="../static/images/logo.svg" alt="logo">
-                        </div>
-                        <h4>新账户?</h4>
-                        <h6 class="font-weight-light">简单注册. 只需一下几个步骤</h6>
-                        <form class="pt-3">
-                            <div class="form-group">
-                                <input type="text" class="form-control form-control-lg" name="username" id="username"
-                                       placeholder="Username">
-                            </div>
-                            <div class="form-group">
-                              <input type="text" class="form-control form-control-lg" id="password"
-                                     placeholder="Password">
-                            </div>
-                            <div class="form-group">
-                                <input type="email" class="form-control form-control-lg" id="email"
-                                       placeholder="Email">
-                            </div>
-                            <div class="form-group">
-                              <input type="text" class="form-control form-control-lg" id="telephone"
-                                     placeholder="Telephone">
-                                <!--<select class="form-control form-control-lg" id="telephone">
-                                    <option>Country</option>
-                                    <option>United States of America</option>
-                                    <option>United Kingdom</option>
-                                    <option>India</option>
-                                    <option>Germany</option>
-                                    <option>Argentina</option>
-                                </select>-->
-                            </div>
-                            <div class="mb-4">
-                                <div class="form-check">
-                                    <label class="form-check-label text-muted">
-                                        <input type="checkbox" class="form-check-input" id="agree">
-                                        同意相关协议
-                                    </label>
-                                </div>
-                            </div>
-                            <div class="mt-3">
-                                <button type="button" class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn"
-                                        onclick="registerOneUser()">注 册</button>
-                            </div>
-                            <div class="text-center mt-4 font-weight-light">
-                                已有账户? <a href="../templates/login.html" class="text-primary" onclick="login()">Login</a>
-                            </div>
-                        </form>
-                    </div>
+      <div class="content-wrapper d-flex align-items-center auth px-0">
+        <div class="row w-100 mx-0">
+          <div class="col-lg-4 mx-auto">
+            <div class="auth-form-light text-left py-5 px-4 px-sm-5">
+              <div class="brand-logo">
+                <img src="../static/images/logo.svg" alt="logo">
+              </div>
+              <h4>新用户?</h4>
+              <h6 class="font-weight-light">注册很容易,这只需简单几步</h6>
+              <form class="pt-3">
+                <div class="form-group">
+                  <input type="text" class="form-control form-control-lg" id="username" placeholder="Username">
                 </div>
+                <div class="form-group">
+                  <input type="password" class="form-control form-control-lg" id="password" placeholder="Password" value="">
+                </div>
+                <div class="form-group">
+                  <input type="email" class="form-control form-control-lg" id="email" placeholder="Email">
+                </div>
+                <div class="form-group">
+                  <input type="text" class="form-control form-control-lg" id="telephone" placeholder="Telephone">
+                </div>
+
+                <div class="mb-4">
+                  <div class="form-check">
+                    <label class="form-check-label text-muted">
+                      <input type="checkbox" class="form-check-input">
+                      本人同意所有条款及细则
+                    </label>
+                  </div>
+                </div>
+                <div class="mt-3">
+                  <button type="button" class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn" onclick="registerOneUser()">注 册</button>
+                </div>
+                <div class="text-center mt-4 font-weight-light">
+                  已有账户? <a href="login.html" class="text-primary">登 录</a>
+                </div>
+              </form>
             </div>
+          </div>
         </div>
-        <!-- content-wrapper ends -->
+      </div>
+      <!-- content-wrapper ends -->
     </div>
-    <!--<div>
-        <h3>Response-</h3>
-        <div id="response-panel"></div>
-    </div>-->
     <!-- page-body-wrapper ends -->
-</div>
-<!-- container-scroller -->
-<!-- plugins:js -->
-<script src="../static/vendors/base/vendor.bundle.base.js"></script>
-<!-- endinject -->
-<!-- inject:js -->
-<script src="../static/js/off-canvas.js"></script>
-<script src="../static/js/hoverable-collapse.js"></script>
-<script src="../static/js/template.js"></script>
-<script src="../static/js/todolist.js"></script>
-<script src="../static/js/jquery-3.1.1.js"></script>
-<!-- endinject -->
-<script>
-    var _response = $('#response-panel');
+  </div>
+  <script src="../static/vendors/js/vendor.bundle.base.js"></script>
+  <script src="../static/js/off-canvas.js"></script>
+  <script src="../static/js/hoverable-collapse.js"></script>
+  <script src="../static/js/template.js"></script>
+  <script src="../static/js/settings.js"></script>
+  <script src="../static/js/todolist.js"></script>
+  <script src="../static/js/jquery-2.1.1.min.js"></script>
+  <script>
     /*function login() {
         $(location).attr('href', 'login.html');
     }*/
     function registerOneUser() {
-        var dataSet = new Object();
-        var data= {
-            username: $("#username").val(),
-            password: $("#password").val(),
-            email: $("#email").val(),
-            telephone: $("#telephone").val()
-        };
-        dataSet.username =$("#username").val();
-        dataSet.password =$("#password").val();
-        dataSet.email =$("#email").val();
-        dataSet.telephone=$("#telephone").val();
-        $.ajax({
-            type: 'POST', // method
-            url: 'register',
-            //url       : 'list?username=kdevkr&password=kdevpass', //
-            async: 'true', // true
-            data: JSON.stringify(data), //
-            //date:dataSet,
-            processData: true, //
-            contentType: 'application/json', //
-            //dataType  :
-            success: function (data) {
-                //window.location.href = "login.html";
-                window.open("/userLogin","_self");
-                //responseJson(data);
-            },
-            error: function (error) {
-                console.log("error", error);
-                //responseError(error);
-            }
-        });
+      var dataSet = new Object();
+      var data= {
+        username: $("#username").val(),
+        password: $("#password").val(),
+        email: $("#email").val(),
+        telephone: $("#telephone").val()
+      };
+      dataSet.username =$("#username").val();
+      dataSet.password =$("#password").val();
+      dataSet.email =$("#email").val();
+      dataSet.telephone=$("#telephone").val();
+      $.ajax({
+        type: 'POST', // method
+        url: 'register',
+        //url       : 'list?username=kdevkr&password=kdevpass', //
+        async: 'true', // true
+        data: JSON.stringify(data), //
+        //date:dataSet,
+        processData: true, //
+        contentType: 'application/json', //
+        //dataType  :
+        success: function (data) {
+          //window.location.href = "login.html";
+          window.open("/userLogin","_self");
+        },
+        error: function (error) {
+          console.log("error", error);
+        }
+      });
     }
-    function responseJson(data){
-        _response.html(convertJson(data));
-    }
-
-    function responseError(data){
-        _response.html(data.responseText);
-    }
-</script>
+  </script>
 </body>
 
 </html>
