@@ -14,5 +14,5 @@ public class User {
     private String email;
     private String telephone;
     private Date loginTime;
-    private Date registerTime;
+    private String registerTime;
 }

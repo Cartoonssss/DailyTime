@@ -101,15 +101,16 @@
             //date: dataSet,
             processData: true, //
             contentType: 'application/json', //
-            dataType  :'json',
+            dataType  :'json',//将服务器返回的数据转换为指定为json类型
             success: function (result) {
                     //responseJson(result);
                     console.log(result);
                     console.log("1111");
                     if (result.status=="200"){
-                        alert("success");
+                        window.open("/index","_self");
                     }else {
-                        alert("error");
+                        alert("账号或密码错误");
+                        window.open("/index","_self");
                     }
             },
             error: function (error) {

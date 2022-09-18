@@ -4,6 +4,7 @@ import com.song.dailytime.dailytime.Entity.User;
 import com.song.dailytime.dailytime.common.ResponseStatus;
 import com.song.dailytime.dailytime.common.RestResponse;
 import com.song.dailytime.dailytime.service.RegisterUser;
+import freemarker.template.utility.DateUtil;
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.slf4j.Logger;
@@ -13,6 +14,9 @@ import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Map;
 
 @Controller
@@ -26,7 +30,17 @@ public class RegisterController {
         return "register";
     }
 
-    @PostMapping(value = "/register")
+    @RequestMapping(value = "/userLogin", method = RequestMethod.GET)
+    public String login() {
+        return "login";
+    }
+
+    @RequestMapping(value = "/index", method = RequestMethod.GET)
+    public String index() {
+        return "index";
+    }
+
+    @RequestMapping(value = "/register",method = RequestMethod.POST)
     public String registerOneUserRecord(@RequestBody Map<String, String> param) {
         String username = param.get("username");
         String password = param.get("password");
@@ -41,6 +55,10 @@ public class RegisterController {
         user.setPassword(password);
         user.setEmail(email);
         user.setTelephone(telephone);
+        SimpleDateFormat registerTime = new SimpleDateFormat("yyyy-MM-dd:HH:mm:ss");
+        String date=null;
+        date = registerTime.format(new Date());
+        user.setRegisterTime(date);
         registerUser.registerOneUserRecord(user);
         return "login";
     }
