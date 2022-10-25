@@ -1067,7 +1067,7 @@
     function queryUserList() {
         $.ajax({
             method: 'POST',
-            url: 'userList',
+            url: 'queryUserList',
             async: 'false', // true
             //data: JSON.stringify(data), //
             //date: dataSet,
@@ -1106,10 +1106,16 @@
         }
         document.getElementById("userInfo").innerHTML = out;
     }
-
+    /*function deleteUser() {
+        $.ajax({
+            method: 'POST',
+            url:'deleteUser',
+        })
+    }*/
     function changeUserInfo() {
 
     }
+
 
 </script>
 </body>

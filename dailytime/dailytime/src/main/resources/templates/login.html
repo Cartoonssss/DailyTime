@@ -90,7 +90,7 @@
       dataSet.password =$("#password").val();
       $.ajax({
         type: 'POST', // method
-        url: 'login',
+        url: 'userLogin',
         //url       : 'list?username=kdevkr&password=kdevpass', //
         async: 'false', // true
         data: JSON.stringify(data), //
@@ -106,7 +106,7 @@
             window.open("/index","_self");
           }else {
             alert("账号或密码错误");
-            window.open("/index","_self");
+            //window.open("/index","_self");
           }
         },
         error: function (error) {

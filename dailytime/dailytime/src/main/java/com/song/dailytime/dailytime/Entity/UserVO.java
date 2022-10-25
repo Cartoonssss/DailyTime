@@ -7,12 +7,15 @@ import java.util.Date;
 
 @Data
 @Repository
-public class User {
-    private Integer id;
+public class UserVO {
+    private String id;
     private String username;
     private String password;
     private String email;
     private String telephone;
-    private Date loginTime;
+    private String loginTime;
     private String registerTime;
+    private String address;
+    private String birthday;
+    private String userRole;
 }

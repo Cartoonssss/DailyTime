@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.song.dailytime.dailytime.dao.ArticleDaoMapper">
+    <resultMap id="BaseResultMapForArticle" type="com.song.dailytime.dailytime.Entity.ArticleVO">
+        <id column="id" property="id" jdbcType="VARCHAR"/>
+        <id column="article_author" property="articleAuthor" jdbcType="VARCHAR"/>
+        <id column="edit_time" property="editTime" jdbcType="VARCHAR"/>
+        <id column="article_content" property="articleContent" jdbcType="LONGVARCHAR"/>
+        <id column="read_count" property="readCount" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <select id="selectArticleById" resultType="com.song.dailytime.dailytime.Entity.ArticleVO" resultMap="BaseResultMapForArticle">
+        select * from article where id=#{id};
+    </select>
+
+    <update id="updateArticle" parameterType="com.song.dailytime.dailytime.Entity.ArticleVO">
+        update article set article_author=#{articleAuthor},edit_time=#{editTime},article_content=#{articleContent},read_count=#{readCount} where id=#{id}
+    </update>
+
+    <delete id="deleteArticle" parameterType="String">
+        delete from article where id=#{id};
+    </delete>
+
+    <insert id="saveArticle" parameterType="com.song.dailytime.dailytime.Entity.ArticleVO" keyProperty="id" useGeneratedKeys="false">
+        insert into article (id,article_author,edit_time,article_content,read_count) value (#{id},#{articleAuthor},#{editTime},#{articleContent},#{readCount});
+    </insert>
+</mapper>
