@@ -10,6 +10,7 @@
         <id column="edit_time" property="editTime" jdbcType="VARCHAR"/>
         <id column="article_content" property="articleContent" jdbcType="LONGVARCHAR"/>
         <id column="read_count" property="readCount" jdbcType="VARCHAR"/>
+        <id column="article_title" property="articleTitle" jdbcType="VARCHAR"/>
     </resultMap>
 
     <select id="selectArticleById" resultType="com.song.dailytime.dailytime.Entity.ArticleVO" resultMap="BaseResultMapForArticle">
@@ -25,7 +26,7 @@
     </delete>
 
     <insert id="saveArticle" parameterType="com.song.dailytime.dailytime.Entity.ArticleVO" keyProperty="id" useGeneratedKeys="false">
-        insert into article (id,article_author,edit_time,article_content,read_count) value (#{id},#{articleAuthor},#{editTime},#{articleContent},#{readCount});
+        insert into article (id,article_author,edit_time,article_content,read_count,article_title) value (#{id},#{articleAuthor},#{editTime},#{articleContent},#{readCount},#{articleTitle});
     </insert>
 
     <select id="queryArticleList" resultMap="BaseResultMapForArticle" resultType="java.util.HashMap" >

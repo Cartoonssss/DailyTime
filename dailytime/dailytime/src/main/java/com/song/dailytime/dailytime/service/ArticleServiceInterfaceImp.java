@@ -3,7 +3,6 @@ package com.song.dailytime.dailytime.service;
 import com.song.dailytime.dailytime.Entity.ArticleVO;
 import com.song.dailytime.dailytime.dao.ArticleDaoMapper;
 import com.song.dailytime.dailytime.service.serviceInterface.ArticleServiceInterFace;
-import org.springframework.data.relational.core.sql.In;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;

@@ -11,4 +11,5 @@ public class ArticleVO {
     private String editTime;
     private String articleContent;
     private String readCount;
+    private String articleTitle;
 }
