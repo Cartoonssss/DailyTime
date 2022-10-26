@@ -41,7 +41,7 @@
             </div>
             <nav class="main-nav">
                 <ul class="navmenu-items">
-                    <li class="navmenu-item"><a href="index.html" class="navmenu-link" onclick="initHomePage()">Home</a>
+                    <li class="navmenu-item"><button class="navmenu-link" onclick="initHomePage()">Home</button>
                     </li>
                     <li class="navmenu-item submenu-wrapper">
                         <a href="#" class="navmenu-link"
@@ -366,90 +366,8 @@
             </a>
         </div>
         <div class="row gy-5">
-            <div class="col-lg-9 left-content">
-                <!-- CARD ITEM -->
-                <div class="featured-topics-card">
-                    <div
-                            class="card-thumb bg-cover"
-                            style="background-image: url('../static/assets/img/blog/featured-topic-1.png')"
-                    ></div>
-                    <span class="topic-category">Design</span>
-                    <div class="card-content">
-                        <a href="blog-list.html">
-                            <h3 class="heading-secondary" id="heading-secondary">News Brief: December Updates From The Google News</h3>
-                        </a>
-                        <p class="body-text">
-                            A breakdown or a flat tire can happen to anyone at any time, and what you have in
-                            your car can make the difference between getting back on the ...
-                        </p>
+            <div class="col-lg-9 left-content" id="cardItem">
 
-                        <div class="post-meta">
-                            <p class="author">by <span>Julius Kenny</span></p>
-                            <span class="post-date"> Feb 06, 2022 </span>
-                        </div>
-                        <a href="blog-list.html" class="button icon-button">
-                                    <span class="icon">
-                                        <i class="fas fa-chevron-right"></i>
-                                    </span>
-                        </a>
-                    </div>
-                </div>
-                <!-- CARD ITEM -->
-                <div class="featured-topics-card">
-                    <div
-                            class="card-thumb bg-cover"
-                            style="background-image: url('../static/assets/img/blog/featured-topic-2.png')"
-                    ></div>
-                    <span class="topic-category">Food</span>
-                    <div class="card-content">
-                        <a href="blog-list.html">
-                            <h3 class="heading-secondary">top 10 spring destinations to visit this year</h3>
-                        </a>
-                        <p class="body-text">
-                            A breakdown or a flat tire can happen to anyone at any time, and what you have in
-                            your car can make the difference between getting back on the ...
-                        </p>
-
-                        <div class="post-meta">
-                            <p class="author">by <span>Ruth Leon</span></p>
-                            <span class="post-date"> Feb 06, 2022 </span>
-                        </div>
-                        <a href="blog-list.html" class="button icon-button">
-                                    <span class="icon">
-                                        <i class="fas fa-chevron-right"></i>
-                                    </span>
-                        </a>
-                    </div>
-                </div>
-                <!-- CARD ITEM -->
-                <div class="featured-topics-card">
-                    <div
-                            class="card-thumb bg-cover"
-                            style="background-image: url('../static/assets/img/blog/featured-topic-3.png')"
-                    ></div>
-                    <span class="topic-category">Travel</span>
-                    <div class="card-content">
-                        <a href="blog-list.html">
-                            <h3 class="heading-secondary">
-                                Stock futures are flat ahead of Fed’s Jackson Hole symposium
-                            </h3>
-                        </a>
-                        <p class="body-text">
-                            A breakdown or a flat tire can happen to anyone at any time, and what you have in
-                            your car can make the difference between getting back on the ...
-                        </p>
-
-                        <div class="post-meta">
-                            <p class="author">by <span>Rachael Sanders</span></p>
-                            <span class="post-date"> Feb 06, 2022 </span>
-                        </div>
-                        <a href="blog-list.html" class="button icon-button">
-                                    <span class="icon">
-                                        <i class="fas fa-chevron-right"></i>
-                                    </span>
-                        </a>
-                    </div>
-                </div>
             </div>
             <div class="col-lg-3">
                 <div class="featured-topic-slidebar">
@@ -1135,7 +1053,7 @@
             url: 'queryArticleList',
             //url       : 'list?username=kdevkr&password=kdevpass', //
             async: 'false', // true
-            data: JSON.stringify(data), //
+            //data: JSON.stringify(data), //
             //date: dataSet,
             processData: true, //
             contentType: 'application/json', //
@@ -1144,21 +1062,23 @@
                 //responseJson(result);
                 console.log(result);
                 console.log("1111");
+                let data = result.data;
+                console.log(data);
                 if (result.status=="200"){
-                        for (let i=0;i<result.data.length();i++){
-                            let divElement='<div "class="featured-topics-card">'
+                        for (let i=0;i<data.length;i++){
+                            let divElement='<div class="featured-topics-card">'
                                     + '<div class="card-thumb bg-cover" style="background-image: url('
                                     +   '../static/assets/img/blog/featured-topic-1.png">'
                                     + '</div>'
                                     + '<span class="topic-category">Design</span>'
                                     + '<div class="card-content">'
-                                    +       '<a href="blog-list.html">'
+                                    +       '<a href="">'
                                     +           '<h3 class="heading-secondary" id="heading-secondary">data[i].title</h3>'
                                     +       '</a>'
                                     +       '<p class="body-text">A breakdown</p>'
                                     + '<div class="post-meta">'
-                                    +       '<p class="author">by <span>Julius Kenny</span></p>'
-                                    +           '<span class="post-date"> Feb 06, 2022 </span>'
+                                    +       '<p class="author">by <span>data[i].articleAuthor</span></p>'
+                                    +           '<span class="post-date">data[i].editTime</span>'
                                     +       '</div>'
                                     +       '<a href="blog-list.html" class="button icon-button">'
                                     +           '<span class="icon">'
@@ -1167,6 +1087,7 @@
                                     +       '</a>'
                                     + '</div>'
                                     + '</div>';
+                            $("#cardItem").append(divElement);
                         }
                     //window.open("/index","_self");
                 }else {
