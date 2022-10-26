@@ -37,3 +37,10 @@ CREATE TABLE `article`(
 ALTER TABLE `article` CHANGE article_user article_author VARCHAR(32);
 
 SELECT * FROM `article`;
+
+
+ALTER TABLE `article` ADD COLUMN article_title VARCHAR(64);
+
+
+
+

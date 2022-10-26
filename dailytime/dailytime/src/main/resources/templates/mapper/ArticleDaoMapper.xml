@@ -27,4 +27,8 @@
     <insert id="saveArticle" parameterType="com.song.dailytime.dailytime.Entity.ArticleVO" keyProperty="id" useGeneratedKeys="false">
         insert into article (id,article_author,edit_time,article_content,read_count) value (#{id},#{articleAuthor},#{editTime},#{articleContent},#{readCount});
     </insert>
+
+    <select id="queryArticleList" resultMap="BaseResultMapForArticle" resultType="java.util.HashMap" >
+        select * from article;
+    </select>
 </mapper>

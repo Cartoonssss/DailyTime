@@ -11,6 +11,7 @@ import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
+import java.util.List;
 import java.util.UUID;
 
 @Controller
@@ -86,6 +87,21 @@ public class ArticleController {
             restResponse.setData(articleVO).setMsg("查询成功").setStatus(ResponseStatus.Ok);
         } else {
             restResponse.setData(null).setMsg("查询失败").setStatus(ResponseStatus.Error);
+        }
+        return restResponse;
+    }
+
+    @GetMapping(value = "queryArticleList")
+    @ResponseBody
+    public Object queryArticleList() {
+        RestResponse<List<ArticleVO>> restResponse = new RestResponse<>();
+        List<ArticleVO> articleVOS = articleServiceInterFace.queryArticleList();
+        if (articleVOS.size() > 0) {
+            restResponse.setData(articleVOS).setMsg("查询成功！").setStatus(ResponseStatus.Ok);
+        } else if (articleVOS.size() == 0) {
+            restResponse.setMsg("暂无数据！").setStatus(ResponseStatus.Ok);
+        } else {
+            restResponse.setMsg("查询失败！").setStatus(ResponseStatus.Error);
         }
         return restResponse;
     }

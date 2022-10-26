@@ -7,6 +7,8 @@ import org.springframework.data.relational.core.sql.In;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+import java.util.List;
+
 @Service
 public class ArticleServiceInterfaceImp implements ArticleServiceInterFace {
 
@@ -30,5 +32,10 @@ public class ArticleServiceInterfaceImp implements ArticleServiceInterFace {
     @Override
     public ArticleVO selectArticleById(String id) {
         return articleDaoMapper.selectArticleById(id);
+    }
+
+    @Override
+    public List<ArticleVO> queryArticleList() {
+        return articleDaoMapper.queryArticleList();
     }
 }

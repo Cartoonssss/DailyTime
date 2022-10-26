@@ -3,6 +3,8 @@ package com.song.dailytime.dailytime.dao;
 import com.song.dailytime.dailytime.Entity.ArticleVO;
 import org.apache.ibatis.annotations.Mapper;
 
+import java.util.List;
+
 @Mapper
 public interface ArticleDaoMapper {
     //保存文章
@@ -16,4 +18,7 @@ public interface ArticleDaoMapper {
 
     //根据ID查找文章
     ArticleVO selectArticleById(String id);
+
+    //查询文章列表
+    List<ArticleVO> queryArticleList();
 }
