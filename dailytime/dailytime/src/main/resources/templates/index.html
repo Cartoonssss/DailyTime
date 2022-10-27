@@ -253,9 +253,9 @@
 </header>
 
 <!-- ============= HERO ============= -->
-<section class="hero-wrapper">
+<!--<section class="hero-wrapper">
     <div class="hero-slider-wrapper">
-        <!-- Slider item -->
+        &lt;!&ndash; Slider item &ndash;&gt;
         <div class="slider-item bg-cover" style="background-image: url('../static/assets/img/hero-bg1.png')">
             <div class="container">
                 <div class="hero-content">
@@ -290,7 +290,7 @@
                 </div>
             </div>
         </div>
-        <!-- Slider item -->
+        &lt;!&ndash; Slider item &ndash;&gt;
         <div class="slider-item bg-cover" style="background-image: url('../static/assets/img/hero-bg2.png')">
             <div class="container">
                 <div class="hero-content">
@@ -320,7 +320,7 @@
                 </div>
             </div>
         </div>
-        <!-- Slider item -->
+        &lt;!&ndash; Slider item &ndash;&gt;
         <div class="slider-item bg-cover" style="background-image: url('../static/assets/img/hero-bg3.png')">
             <div class="container">
                 <div class="hero-content">
@@ -351,7 +351,7 @@
             </div>
         </div>
     </div>
-</section>
+</section>-->
 
 <!-- ============= FEATURED TOPICS ============= -->
 <section class="featured-topics-wrapper section-padding">
@@ -1047,60 +1047,60 @@
 <script src="../static/assets/js/active.js"></script>
 
 <script type="text/javascript">
-    function initHomePage(){
-        $.ajax({
-            type: 'GET', // method
-            url: 'queryArticleList',
-            //url       : 'list?username=kdevkr&password=kdevpass', //
-            async: 'false', // true
-            //data: JSON.stringify(data), //
-            //date: dataSet,
-            processData: true, //
-            contentType: 'application/json', //
-            dataType  :'json',//将服务器返回的数据转换为指定为json类型
-            success: function (result) {
-                //responseJson(result);
-                console.log(result);
-                console.log("1111");
-                let data = result.data;
-                console.log(data);
-                if (result.status=="200"){
-                        for (let i=0;i<data.length;i++){
-                            let divElement='<div class="featured-topics-card">'
-                                    + '<div class="card-thumb bg-cover" style="background-image: url('
-                                    +   '../static/assets/img/blog/featured-topic-1.png">'
-                                    + '</div>'
-                                    + '<span class="topic-category">Design</span>'
-                                    + '<div class="card-content">'
-                                    +       '<a href="">'
-                                    +           '<h3 class="heading-secondary" id="heading-secondary">data[i].title</h3>'
-                                    +       '</a>'
-                                    +       '<p class="body-text">A breakdown</p>'
-                                    + '<div class="post-meta">'
-                                    +       '<p class="author">by <span>data[i].articleAuthor</span></p>'
-                                    +           '<span class="post-date">data[i].editTime</span>'
-                                    +       '</div>'
-                                    +       '<a href="blog-list.html" class="button icon-button">'
-                                    +           '<span class="icon">'
-                                    +               '<i class="fas fa-chevron-right"></i>'
-                                    +           '</span>'
-                                    +       '</a>'
-                                    + '</div>'
-                                    + '</div>';
+    $(document).ready(function() {
+            $.ajax({
+                type: 'GET', // method
+                url: 'queryArticleList',
+                //url       : 'list?username=kdevkr&password=kdevpass', //
+                async: 'false', // true
+                //data: JSON.stringify(data), //
+                //date: dataSet,
+                processData: true, //
+                contentType: 'application/json', //
+                dataType: 'json',//将服务器返回的数据转换为指定为json类型
+                success: function (result) {
+                    //responseJson(result);
+                    console.log(result);
+                    console.log("1111");
+                    let data = result.data;
+                    console.log(data);
+                    if (result.status == "200") {
+                        for (let i = 0; i < data.length; i++) {
+                            let divElement = '<div class="featured-topics-card">'
+                                + '<div class="card-thumb bg-cover" style="background-image: url('
+                                + '../static/assets/img/blog/featured-topic-1.png">'
+                                + '</div>'
+                                + '<span class="topic-category">Design</span>'
+                                + '<div class="card-content">'
+                                + '<a href="">'
+                                + '<h3 class="heading-secondary" id="heading-secondary">' + data[i].articleTitle + '</h3>'
+                                + '</a>'
+                                + '<p class="body-text">' + (data[i].articleContent).substring(0, 50) + "...." + '</p>'
+                                + '<div class="post-meta">'
+                                + '<p class="author">by <span>' + data[i].articleAuthor + '</span></p>'
+                                + '<span class="post-date">' + data[i].editTime + '</span>'
+                                + '</div>'
+                                + '<a href="blog-list.html" class="button icon-button">'
+                                + '<span class="icon">'
+                                + '<i class="fas fa-chevron-right"></i>'
+                                + '</span>'
+                                + '</a>'
+                                + '</div>'
+                                + '</div>';
                             $("#cardItem").append(divElement);
                         }
-                    //window.open("/index","_self");
-                }else {
-                    alert("查询失败！");
-                    //window.open("/index","_self");
+                        //window.open("/index","_self");
+                    } else {
+                        alert("查询失败！");
+                        //window.open("/index","_self");
+                    }
+                },
+                error: function (error) {
+                    console.log("error", error);
+                    //responseError(error);
                 }
-            },
-            error: function (error) {
-                console.log("error", error);
-                //responseError(error);
-            }
-        })
-    }
+            })
+    })
 </script>
 </body>
 </html>
