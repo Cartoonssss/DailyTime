@@ -98,7 +98,7 @@ public class UserController {
         UserVO userVO = userServiceInterFace.userLogin(username, password);
         SimpleDateFormat currentTime = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         String loginTime = currentTime.format(new Date(System.currentTimeMillis()));
-        userVO.setLoginTime(loginTime);
+        userVO.setLastLoginTime(loginTime);
         userServiceInterFace.updateUserLastLoginTime(userVO);
         if (userVO != null) {
             restResponse.setData(userVO).setStatus(ResponseStatus.Ok);

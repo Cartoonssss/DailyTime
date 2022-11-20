@@ -13,7 +13,7 @@ public class UserVO {
     private String password;
     private String email;
     private String telephone;
-    private String loginTime;
+    private String lastLoginTime;
     private String registerTime;
     private String address;
     private String birthday;

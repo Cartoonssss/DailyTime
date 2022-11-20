@@ -9,7 +9,7 @@
         <id column="password" property="password" jdbcType="VARCHAR"/>
         <id column="email" property="email" jdbcType="VARCHAR"/>
         <id column="telephone" property="telephone" jdbcType="VARCHAR"/>
-        <id column="loginTime" property="loginTime" jdbcType="VARCHAR"/>
+        <id column="lastLoginTime" property="lastLoginTime" jdbcType="VARCHAR"/>
         <id column="registerTime" property="registerTime" jdbcType="VARCHAR"/>
         <id column="address" property="address" jdbcType="VARCHAR"/>
         <id column="birthday" property="birthday" jdbcType="VARCHAR"/>
@@ -33,7 +33,7 @@
     </delete>
 
     <update id="updateUserLastLoginTime" parameterType="com.song.dailytime.dailytime.Entity.UserVO">
-        update `user` set loginTime=(#{loginTime}) where id=(#{id});
+        update `user` set lastLoginTime=(#{lastLoginTime}) where id=(#{id});
     </update>
 
     <update id="updateUserInfo" parameterType="com.song.dailytime.dailytime.Entity.UserVO">
