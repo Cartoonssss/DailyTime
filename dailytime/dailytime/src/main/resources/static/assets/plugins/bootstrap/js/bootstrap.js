@@ -1,6 +1,6 @@
 /*!
   * Bootstrap v5.1.3 (https://getbootstrap.com/)
-  * ¸ü¶à¸ß¶ËÄ£°å   :   http://www.bootstrapmb.com
+  * ï¿½ï¿½ï¿½ï¿½ß¶ï¿½Ä£ï¿½ï¿½   :   http://www.bootstrapmb.com
   * Copyright 2011-2021 The Bootstrap Authors (https://github.com/twbs/bootstrap/graphs/contributors)
   * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
   */
@@ -720,30 +720,30 @@
     _queueCallback(callback, element, isAnimated = true) {
       executeAfterTransition(callback, element, isAnimated);
     }
-    /** Static */
+    /** ../static */
 
 
-    static getInstance(element) {
+    ../static getInstance(element) {
       return Data.get(getElement(element), this.DATA_KEY);
     }
 
-    static getOrCreateInstance(element, config = {}) {
+    ../static getOrCreateInstance(element, config = {}) {
       return this.getInstance(element) || new this(element, typeof config === 'object' ? config : null);
     }
 
-    static get VERSION() {
+    ../static get VERSION() {
       return VERSION;
     }
 
-    static get NAME() {
-      throw new Error('You have to implement the static method "NAME", for each component!');
+    ../static get NAME() {
+      throw new Error('You have to implement the ../static method "NAME", for each component!');
     }
 
-    static get DATA_KEY() {
+    ../static get DATA_KEY() {
       return `bs.${this.NAME}`;
     }
 
-    static get EVENT_KEY() {
+    ../static get EVENT_KEY() {
       return `.${this.DATA_KEY}`;
     }
 
@@ -802,7 +802,7 @@
 
   class Alert extends BaseComponent {
     // Getters
-    static get NAME() {
+    ../static get NAME() {
       return NAME$d;
     } // Public
 
@@ -827,10 +827,10 @@
 
       EventHandler.trigger(this._element, EVENT_CLOSED);
       this.dispose();
-    } // Static
+    } // ../static
 
 
-    static jQueryInterface(config) {
+    ../static jQueryInterface(config) {
       return this.each(function () {
         const data = Alert.getOrCreateInstance(this);
 
@@ -891,7 +891,7 @@
 
   class Button extends BaseComponent {
     // Getters
-    static get NAME() {
+    ../static get NAME() {
       return NAME$c;
     } // Public
 
@@ -899,10 +899,10 @@
     toggle() {
       // Toggle class and sync the `aria-pressed` attribute with the return value of the `.toggle()` method
       this._element.setAttribute('aria-pressed', this._element.classList.toggle(CLASS_NAME_ACTIVE$3));
-    } // Static
+    } // ../static
 
 
-    static jQueryInterface(config) {
+    ../static jQueryInterface(config) {
       return this.each(function () {
         const data = Button.getOrCreateInstance(this);
 
@@ -1182,11 +1182,11 @@
     } // Getters
 
 
-    static get Default() {
+    ../static get Default() {
       return Default$a;
     }
 
-    static get NAME() {
+    ../static get NAME() {
       return NAME$b;
     } // Public
 
@@ -1541,10 +1541,10 @@
       }
 
       return order === ORDER_PREV ? DIRECTION_RIGHT : DIRECTION_LEFT;
-    } // Static
+    } // ../static
 
 
-    static carouselInterface(element, config) {
+    ../static carouselInterface(element, config) {
       const data = Carousel.getOrCreateInstance(element, config);
       let {
         _config
@@ -1572,13 +1572,13 @@
       }
     }
 
-    static jQueryInterface(config) {
+    ../static jQueryInterface(config) {
       return this.each(function () {
         Carousel.carouselInterface(this, config);
       });
     }
 
-    static dataApiClickHandler(event) {
+    ../static dataApiClickHandler(event) {
       const target = getElementFromSelector(this);
 
       if (!target || !target.classList.contains(CLASS_NAME_CAROUSEL)) {
@@ -1705,11 +1705,11 @@
     } // Getters
 
 
-    static get Default() {
+    ../static get Default() {
       return Default$9;
     }
 
-    static get NAME() {
+    ../static get NAME() {
       return NAME$a;
     } // Public
 
@@ -1893,10 +1893,10 @@
 
         elem.setAttribute('aria-expanded', isOpen);
       });
-    } // Static
+    } // ../static
 
 
-    static jQueryInterface(config) {
+    ../static jQueryInterface(config) {
       return this.each(function () {
         const _config = {};
 
@@ -2025,15 +2025,15 @@
     } // Getters
 
 
-    static get Default() {
+    ../static get Default() {
       return Default$8;
     }
 
-    static get DefaultType() {
+    ../static get DefaultType() {
       return DefaultType$8;
     }
 
-    static get NAME() {
+    ../static get NAME() {
       return NAME$9;
     } // Public
 
@@ -2171,11 +2171,11 @@
 
       const popperConfig = this._getPopperConfig();
 
-      const isDisplayStatic = popperConfig.modifiers.find(modifier => modifier.name === 'applyStyles' && modifier.enabled === false);
+      const isDisplay../static = popperConfig.modifiers.find(modifier => modifier.name === 'applyStyles' && modifier.enabled === false);
       this._popper = Popper__namespace.createPopper(referenceElement, this._menu, popperConfig);
 
-      if (isDisplayStatic) {
-        Manipulator.setDataAttribute(this._menu, 'popper', 'static');
+      if (isDisplay../static) {
+        Manipulator.setDataAttribute(this._menu, 'popper', '../static');
       }
     }
 
@@ -2242,9 +2242,9 @@
             offset: this._getOffset()
           }
         }]
-      }; // Disable Popper if we have a static display
+      }; // Disable Popper if we have a ../static display
 
-      if (this._config.display === 'static') {
+      if (this._config.display === '../static') {
         defaultBsPopperConfig.modifiers = [{
           name: 'applyStyles',
           enabled: false
@@ -2269,10 +2269,10 @@
 
 
       getNextActiveElement(items, target, key === ARROW_DOWN_KEY, !items.includes(target)).focus();
-    } // Static
+    } // ../static
 
 
-    static jQueryInterface(config) {
+    ../static jQueryInterface(config) {
       return this.each(function () {
         const data = Dropdown.getOrCreateInstance(this, config);
 
@@ -2288,7 +2288,7 @@
       });
     }
 
-    static clearMenus(event) {
+    ../static clearMenus(event) {
       if (event && (event.button === RIGHT_MOUSE_BUTTON || event.type === 'keyup' && event.key !== TAB_KEY$1)) {
         return;
       }
@@ -2332,11 +2332,11 @@
       }
     }
 
-    static getParentFromElement(element) {
+    ../static getParentFromElement(element) {
       return getElementFromSelector(element) || element.parentNode;
     }
 
-    static dataApiKeydownHandler(event) {
+    ../static dataApiKeydownHandler(event) {
       // If not input/textarea:
       //  - And not a key in REGEXP_KEYDOWN => not a dropdown command
       // If input/textarea:
@@ -2781,7 +2781,7 @@
   const CLASS_NAME_OPEN = 'modal-open';
   const CLASS_NAME_FADE$3 = 'fade';
   const CLASS_NAME_SHOW$4 = 'show';
-  const CLASS_NAME_STATIC = 'modal-static';
+  const CLASS_NAME_../static = 'modal-../static';
   const OPEN_SELECTOR$1 = '.modal.show';
   const SELECTOR_DIALOG = '.modal-dialog';
   const SELECTOR_MODAL_BODY = '.modal-body';
@@ -2806,11 +2806,11 @@
     } // Getters
 
 
-    static get Default() {
+    ../static get Default() {
       return Default$5;
     }
 
-    static get NAME() {
+    ../static get NAME() {
       return NAME$6;
     } // Public
 
@@ -2910,7 +2910,7 @@
     _initializeBackDrop() {
       return new Backdrop({
         isVisible: Boolean(this._config.backdrop),
-        // 'static' option will be translated to true, and booleans will keep their value
+        // '../static' option will be translated to true, and booleans will keep their value
         isAnimated: this._isAnimated()
       });
     }
@@ -3032,7 +3032,7 @@
 
         if (this._config.backdrop === true) {
           this.hide();
-        } else if (this._config.backdrop === 'static') {
+        } else if (this._config.backdrop === '../static') {
           this._triggerBackdropTransition();
         }
       });
@@ -3058,7 +3058,7 @@
       } = this._element;
       const isModalOverflowing = scrollHeight > document.documentElement.clientHeight; // return if the following background transition hasn't yet completed
 
-      if (!isModalOverflowing && style.overflowY === 'hidden' || classList.contains(CLASS_NAME_STATIC)) {
+      if (!isModalOverflowing && style.overflowY === 'hidden' || classList.contains(CLASS_NAME_../static)) {
         return;
       }
 
@@ -3066,10 +3066,10 @@
         style.overflowY = 'hidden';
       }
 
-      classList.add(CLASS_NAME_STATIC);
+      classList.add(CLASS_NAME_../static);
 
       this._queueCallback(() => {
-        classList.remove(CLASS_NAME_STATIC);
+        classList.remove(CLASS_NAME_../static);
 
         if (!isModalOverflowing) {
           this._queueCallback(() => {
@@ -3103,10 +3103,10 @@
     _resetAdjustments() {
       this._element.style.paddingLeft = '';
       this._element.style.paddingRight = '';
-    } // Static
+    } // ../static
 
 
-    static jQueryInterface(config, relatedTarget) {
+    ../static jQueryInterface(config, relatedTarget) {
       return this.each(function () {
         const data = Modal.getOrCreateInstance(this, config);
 
@@ -3225,11 +3225,11 @@
     } // Getters
 
 
-    static get NAME() {
+    ../static get NAME() {
       return NAME$5;
     }
 
-    static get Default() {
+    ../static get Default() {
       return Default$4;
     } // Public
 
@@ -3361,10 +3361,10 @@
           this.hide();
         }
       });
-    } // Static
+    } // ../static
 
 
-    static jQueryInterface(config) {
+    ../static jQueryInterface(config) {
       return this.each(function () {
         const data = Offcanvas.getOrCreateInstance(this, config);
 
@@ -3650,19 +3650,19 @@
     } // Getters
 
 
-    static get Default() {
+    ../static get Default() {
       return Default$3;
     }
 
-    static get NAME() {
+    ../static get NAME() {
       return NAME$4;
     }
 
-    static get Event() {
+    ../static get Event() {
       return Event$2;
     }
 
-    static get DefaultType() {
+    ../static get DefaultType() {
       return DefaultType$3;
     } // Public
 
@@ -4219,10 +4219,10 @@
 
         this._popper = null;
       }
-    } // Static
+    } // ../static
 
 
-    static jQueryInterface(config) {
+    ../static jQueryInterface(config) {
       return this.each(function () {
         const data = Tooltip.getOrCreateInstance(this, config);
 
@@ -4295,19 +4295,19 @@
 
   class Popover extends Tooltip {
     // Getters
-    static get Default() {
+    ../static get Default() {
       return Default$2;
     }
 
-    static get NAME() {
+    ../static get NAME() {
       return NAME$3;
     }
 
-    static get Event() {
+    ../static get Event() {
       return Event$1;
     }
 
-    static get DefaultType() {
+    ../static get DefaultType() {
       return DefaultType$2;
     } // Overrides
 
@@ -4329,10 +4329,10 @@
 
     _getBasicClassPrefix() {
       return CLASS_PREFIX;
-    } // Static
+    } // ../static
 
 
-    static jQueryInterface(config) {
+    ../static jQueryInterface(config) {
       return this.each(function () {
         const data = Popover.getOrCreateInstance(this, config);
 
@@ -4420,11 +4420,11 @@
     } // Getters
 
 
-    static get Default() {
+    ../static get Default() {
       return Default$1;
     }
 
-    static get NAME() {
+    ../static get NAME() {
       return NAME$2;
     } // Public
 
@@ -4553,10 +4553,10 @@
 
     _clear() {
       SelectorEngine.find(SELECTOR_LINK_ITEMS, this._config.target).filter(node => node.classList.contains(CLASS_NAME_ACTIVE$1)).forEach(node => node.classList.remove(CLASS_NAME_ACTIVE$1));
-    } // Static
+    } // ../static
 
 
-    static jQueryInterface(config) {
+    ../static jQueryInterface(config) {
       return this.each(function () {
         const data = ScrollSpy.getOrCreateInstance(this, config);
 
@@ -4632,7 +4632,7 @@
 
   class Tab extends BaseComponent {
     // Getters
-    static get NAME() {
+    ../static get NAME() {
       return NAME$1;
     } // Public
 
@@ -4744,10 +4744,10 @@
       if (callback) {
         callback();
       }
-    } // Static
+    } // ../static
 
 
-    static jQueryInterface(config) {
+    ../static jQueryInterface(config) {
       return this.each(function () {
         const data = Tab.getOrCreateInstance(this);
 
@@ -4846,15 +4846,15 @@
     } // Getters
 
 
-    static get DefaultType() {
+    ../static get DefaultType() {
       return DefaultType;
     }
 
-    static get Default() {
+    ../static get Default() {
       return Default;
     }
 
-    static get NAME() {
+    ../static get NAME() {
       return NAME;
     } // Public
 
@@ -4991,10 +4991,10 @@
     _clearTimeout() {
       clearTimeout(this._timeout);
       this._timeout = null;
-    } // Static
+    } // ../static
 
 
-    static jQueryInterface(config) {
+    ../static jQueryInterface(config) {
       return this.each(function () {
         const data = Toast.getOrCreateInstance(this, config);
 

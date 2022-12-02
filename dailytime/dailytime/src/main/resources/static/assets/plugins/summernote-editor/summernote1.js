@@ -4056,7 +4056,7 @@
 							n = this.$toolbar.height(),
 							o = this.$statusbar.height(),
 							r = 0;
-						this.options.otherStaticBar && (r = i()(this.options.otherStaticBar).outerHeight());
+						this.options.other../staticBar && (r = i()(this.options.other../staticBar).outerHeight());
 						var a = this.$document.scrollTop(),
 							s = this.$editor.offset().top,
 							l = s - r,
@@ -4966,7 +4966,7 @@
 					lang: "en-US",
 					followingToolbar: !1,
 					toolbarPosition: "top",
-					otherStaticBar: "",
+					other../staticBar: "",
 					codeviewKeepButton: !1,
 					toolbar: [
 						["style", ["style"]],

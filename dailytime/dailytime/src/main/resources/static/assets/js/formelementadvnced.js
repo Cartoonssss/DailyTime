@@ -19,7 +19,7 @@ $(function (e) {
 	function select2Style1(data) {
 		if (!data.id) { return data.text; }
 		var $data = $(
-			'<span><img src="../assets/images/users/' + data.element.value.toLowerCase() + '.jpg" class="rounded-circle avatar-sm" /> '
+			'<span><img src="../static/assets/images/users/' + data.element.value.toLowerCase() + '.jpg" class="rounded-circle avatar-sm" /> '
 			+ data.text + '</span>'
 		);
 		return $data;

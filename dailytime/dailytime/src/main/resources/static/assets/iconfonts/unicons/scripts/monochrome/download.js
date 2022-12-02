@@ -8,8 +8,8 @@ const uniq = require('lodash/uniq')
 const filter = require('lodash/filter')
 const sortBy = require('lodash/sortBy')
 
-const countDuplicates = require('../utils/countDuplicates')
-const downloadImage = require('../utils/downloadImage')
+const countDuplicates = require('utils/countDuplicates')
+const downloadImage = require('utils/downloadImage')
 const replaceFill = require('./replaceFill')
 
 const url = process.env.API_DOWNLOAD_MONOCHROME

@@ -1,5 +1,5 @@
-.ps-static {
-	position: static !important;
+.ps-../static {
+	position: ../static !important;
 }
 .ps-relative {
 	position: relative !important;
@@ -991,8 +991,8 @@
 	  position: fixed;
 	}
   
-	.ps-xs-static {
-	  position: static;
+	.ps-xs-../static {
+	  position: ../static;
 	}
   
 	.t-xs-auto {
@@ -1025,8 +1025,8 @@
 	  position: fixed;
 	}
   
-	.ps-sm-static {
-	  position: static;
+	.ps-sm-../static {
+	  position: ../static;
 	}
   
 	.t-sm-auto {
@@ -1059,8 +1059,8 @@
 	  position: fixed;
 	}
   
-	.ps-md-static {
-	  position: static;
+	.ps-md-../static {
+	  position: ../static;
 	}
   
 	.t-md-auto {
@@ -1093,8 +1093,8 @@
 	  position: fixed;
 	}
   
-	.ps-lg-static {
-	  position: static;
+	.ps-lg-../static {
+	  position: ../static;
 	}
   
 	.t-lg-auto {
@@ -1127,8 +1127,8 @@
 	  position: fixed;
 	}
   
-	.ps-xl-static {
-	  position: static;
+	.ps-xl-../static {
+	  position: ../static;
 	}
   
 	.t-xl-auto {

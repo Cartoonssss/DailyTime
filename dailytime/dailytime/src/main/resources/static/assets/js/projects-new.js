@@ -31,7 +31,7 @@ $('.select2-show-search').select2({
 function selectClient(client) {
     if (!client.id) { return client.text; }
     var $client = $(
-        '<span><img src="../assets/images/users/' + client.element.value.toLowerCase() + '.jpg" class="rounded-circle avatar-sm" /> '
+        '<span><img src="../static/assets/images/users/' + client.element.value.toLowerCase() + '.jpg" class="rounded-circle avatar-sm" /> '
         + client.text + '</span>'
     );
     return $client;

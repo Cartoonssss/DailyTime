@@ -6,7 +6,7 @@
 	margin: 1rem -1rem;
 	border-width: .2rem 0 0;
 }
-.bd-example-tooltip-static .tooltip {
+.bd-example-tooltip-../static .tooltip {
 	position: relative;
 	display: inline-block;
 	margin: 10px 20px;
@@ -244,7 +244,7 @@
 	right: 1px;
 	border-left-color: $white;
 }
-.popover-static-demo .popover {
+.popover-../static-demo .popover {
 	position: relative;
 }
 .jqstooltip {
@@ -261,7 +261,7 @@
 		font: inherit !important;
 	}
 }
-.tooltip-static-demo {
+.tooltip-../static-demo {
 	text-align: center;
 	background-color: #f3f4f7;
 	padding: 20px;
@@ -284,7 +284,7 @@
 		margin-top: -6px;
 	}
 }
-.popover-static-demo {
+.popover-../static-demo {
 	background-color: #f3f4f7;
 	padding-top: 40px;
 	padding-bottom: 40px;

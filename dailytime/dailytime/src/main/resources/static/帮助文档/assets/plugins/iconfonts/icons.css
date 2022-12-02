@@ -2342,7 +2342,7 @@
 }
 .sr-only-focusable:active,
 .sr-only-focusable:focus {
-  position: static;
+  position: ../static;
   width: auto;
   height: auto;
   margin: 0;

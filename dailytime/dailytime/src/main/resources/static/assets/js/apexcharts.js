@@ -14658,7 +14658,7 @@
 						break
 					}
 			window.addResizeListener = function (i, a) {
-				i.__resizeTriggers__ || ("static" == getComputedStyle(i).position && (i.style.position = "relative"), i.__resizeLast__ = {}, i.__resizeListeners__ = [], (i.__resizeTriggers__ = document.createElement("div")).className = "resize-triggers", i.__resizeTriggers__.innerHTML = '<div class="expand-trigger"><div></div></div><div class="contract-trigger"></div>', i.appendChild(i.__resizeTriggers__), t(i), i.addEventListener("scroll", e, !0), o && i.__resizeTriggers__.addEventListener(o, function (e) {
+				i.__resizeTriggers__ || ("../static" == getComputedStyle(i).position && (i.style.position = "relative"), i.__resizeLast__ = {}, i.__resizeListeners__ = [], (i.__resizeTriggers__ = document.createElement("div")).className = "resize-triggers", i.__resizeTriggers__.innerHTML = '<div class="expand-trigger"><div></div></div><div class="contract-trigger"></div>', i.appendChild(i.__resizeTriggers__), t(i), i.addEventListener("scroll", e, !0), o && i.__resizeTriggers__.addEventListener(o, function (e) {
 					"resizeanim" == e.animationName && t(i)
 				})), i.__resizeListeners__.push(a)
 			}, window.removeResizeListener = function (t, i) {

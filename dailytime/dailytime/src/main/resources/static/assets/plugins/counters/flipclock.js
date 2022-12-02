@@ -8,7 +8,7 @@ var Base = function() {
 	// dummy
 };
 
-Base.extend = function(_instance, _static) { // subclass
+Base.extend = function(_instance, _../static) { // subclass
 	
 	"use strict";
 	
@@ -53,7 +53,7 @@ Base.extend = function(_instance, _static) { // subclass
 		//return (type == "object") ? klass : constructor; //-dean
 		return (type == "object") ? klass : constructor.valueOf();
 	};
-	extend.call(klass, _static);
+	extend.call(klass, _../static);
 	// class initialisation
 	if (typeof klass.init == "function") klass.init();
 	return klass;

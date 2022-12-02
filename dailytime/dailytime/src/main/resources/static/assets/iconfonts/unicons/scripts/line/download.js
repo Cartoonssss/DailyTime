@@ -8,8 +8,8 @@ const sortBy = require('lodash/sortBy')
 const maxBy = require('lodash/maxBy')
 const upperFirst = require('lodash/upperFirst')
 
-const countDuplicates = require('../utils/countDuplicates')
-const downloadImage = require('../utils/downloadImage')
+const countDuplicates = require('utils/countDuplicates')
+const downloadImage = require('utils/downloadImage')
 
 const targetPath = path.join(process.cwd(), `json/${process.env.STYLE}.json`)
 const targetImagePath = path.join(process.cwd(), `svg/${process.env.STYLE}`)

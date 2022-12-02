@@ -3011,7 +3011,7 @@
 
 @media (min-width: 1400px) {
     body.dark-mode.layout-boxed.bg-img1 .page {
-        background: url(../images/media/bg-img1.jpg);
+        background: url(images/media/bg-img1.jpg);
         background-blend-mode: overlay;
         background-size: cover;
         background-position: center;
@@ -3056,7 +3056,7 @@
     }
 
     body.dark-mode.layout-boxed.bg-img2 .page {
-        background: url(../images/media/bg-img2.jpg);
+        background: url(images/media/bg-img2.jpg);
         background-blend-mode: overlay;
         background-size: cover;
         background-position: center;
@@ -3101,7 +3101,7 @@
     }
 
     body.dark-mode.layout-boxed.bg-img3 .page {
-        background: url(../images/media/bg-img3.jpg);
+        background: url(images/media/bg-img3.jpg);
         background-blend-mode: overlay;
         background-size: cover;
         background-position: center;
@@ -3146,7 +3146,7 @@
     }
 
     body.dark-mode.layout-boxed.bg-img4 .page {
-        background: url(../images/media/bg-img4.jpg);
+        background: url(images/media/bg-img4.jpg);
         background-blend-mode: overlay;
         background-size: cover;
         background-position: center;

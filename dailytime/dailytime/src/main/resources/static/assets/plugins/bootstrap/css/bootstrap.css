@@ -4047,7 +4047,7 @@ textarea.form-control-lg {
   padding-left: 0;
 }
 .navbar-nav .dropdown-menu {
-  position: static;
+  position: ../static;
 }
 
 .navbar-text {
@@ -5483,7 +5483,7 @@ textarea.form-control-lg {
 .modal.show .modal-dialog {
   transform: none;
 }
-.modal.modal-static .modal-dialog {
+.modal.modal-../static .modal-dialog {
   transform: scale(1.02);
 }
 
@@ -6742,8 +6742,8 @@ textarea.form-control-lg {
   box-shadow: none !important;
 }
 
-.position-static {
-  position: static !important;
+.position-../static {
+  position: ../static !important;
 }
 
 .position-relative {

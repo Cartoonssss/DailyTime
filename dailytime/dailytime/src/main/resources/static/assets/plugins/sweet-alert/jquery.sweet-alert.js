@@ -76,7 +76,7 @@ $(function(e) {
 		swal({
 			title: 'Lovely!',
 			text: 'your image is uploaded.',
-			imageUrl: '../assets/images/brand/logo-2.png',
+			imageUrl: '../static/assets/images/brand/logo-2.png',
 			animation: false,
 		})
 	});

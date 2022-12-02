@@ -1,47 +1,47 @@
 @font-face {
   font-family: 'unicons-solid';
-  src: url('../fonts/solid/unicons-0.eot');
-  src: url('../fonts/solid/unicons-0.eot#iefix') format('embedded-opentype'),
-        url('../fonts/solid/unicons-0.woff2') format('woff2'),
-        url('../fonts/solid/unicons-0.woff') format('woff'),
-        url('../fonts/solid/unicons-0.ttf') format('truetype'),
-        url('../fonts/solid/unicons-0.svg#unicons') format('svg');
+  src: url('fonts/solid/unicons-0.eot');
+  src: url('fonts/solid/unicons-0.eot#iefix') format('embedded-opentype'),
+        url('fonts/solid/unicons-0.woff2') format('woff2'),
+        url('fonts/solid/unicons-0.woff') format('woff'),
+        url('fonts/solid/unicons-0.ttf') format('truetype'),
+        url('fonts/solid/unicons-0.svg#unicons') format('svg');
   font-weight: normal;
   font-style: normal;
   unicode-range: U+E800-E83B;
 }
 @font-face {
   font-family: 'unicons-solid';
-  src: url('../fonts/solid/unicons-1.eot');
-  src: url('../fonts/solid/unicons-1.eot#iefix') format('embedded-opentype'),
-        url('../fonts/solid/unicons-1.woff2') format('woff2'),
-        url('../fonts/solid/unicons-1.woff') format('woff'),
-        url('../fonts/solid/unicons-1.ttf') format('truetype'),
-        url('../fonts/solid/unicons-1.svg#unicons') format('svg');
+  src: url('fonts/solid/unicons-1.eot');
+  src: url('fonts/solid/unicons-1.eot#iefix') format('embedded-opentype'),
+        url('fonts/solid/unicons-1.woff2') format('woff2'),
+        url('fonts/solid/unicons-1.woff') format('woff'),
+        url('fonts/solid/unicons-1.ttf') format('truetype'),
+        url('fonts/solid/unicons-1.svg#unicons') format('svg');
   font-weight: normal;
   font-style: normal;
   unicode-range: U+E83C-E877;
 }
 @font-face {
   font-family: 'unicons-solid';
-  src: url('../fonts/solid/unicons-2.eot');
-  src: url('../fonts/solid/unicons-2.eot#iefix') format('embedded-opentype'),
-        url('../fonts/solid/unicons-2.woff2') format('woff2'),
-        url('../fonts/solid/unicons-2.woff') format('woff'),
-        url('../fonts/solid/unicons-2.ttf') format('truetype'),
-        url('../fonts/solid/unicons-2.svg#unicons') format('svg');
+  src: url('fonts/solid/unicons-2.eot');
+  src: url('fonts/solid/unicons-2.eot#iefix') format('embedded-opentype'),
+        url('fonts/solid/unicons-2.woff2') format('woff2'),
+        url('fonts/solid/unicons-2.woff') format('woff'),
+        url('fonts/solid/unicons-2.ttf') format('truetype'),
+        url('fonts/solid/unicons-2.svg#unicons') format('svg');
   font-weight: normal;
   font-style: normal;
   unicode-range: U+E878-E8B3;
 }
 @font-face {
   font-family: 'unicons-solid';
-  src: url('../fonts/solid/unicons-3.eot');
-  src: url('../fonts/solid/unicons-3.eot#iefix') format('embedded-opentype'),
-        url('../fonts/solid/unicons-3.woff2') format('woff2'),
-        url('../fonts/solid/unicons-3.woff') format('woff'),
-        url('../fonts/solid/unicons-3.ttf') format('truetype'),
-        url('../fonts/solid/unicons-3.svg#unicons') format('svg');
+  src: url('fonts/solid/unicons-3.eot');
+  src: url('fonts/solid/unicons-3.eot#iefix') format('embedded-opentype'),
+        url('fonts/solid/unicons-3.woff2') format('woff2'),
+        url('fonts/solid/unicons-3.woff') format('woff'),
+        url('fonts/solid/unicons-3.ttf') format('truetype'),
+        url('fonts/solid/unicons-3.svg#unicons') format('svg');
   font-weight: normal;
   font-style: normal;
   unicode-range: U+E8B4-E8BC;

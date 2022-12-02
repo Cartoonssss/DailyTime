@@ -46,20 +46,20 @@ glob(sourcePath, (err, files) => {
 
     cssFontFaceList.push(`@font-face {
   font-family: 'unicons-${process.env.STYLE}';
-  src: url('../fonts/${process.env.STYLE}/${configData.name}.eot');
-  src: url('../fonts/${process.env.STYLE}/${
+  src: url('fonts/${process.env.STYLE}/${configData.name}.eot');
+  src: url('fonts/${process.env.STYLE}/${
       configData.name
     }.eot#iefix') format('embedded-opentype'),
-        url('../fonts/${process.env.STYLE}/${
+        url('fonts/${process.env.STYLE}/${
       configData.name
     }.woff2') format('woff2'),
-        url('../fonts/${process.env.STYLE}/${
+        url('fonts/${process.env.STYLE}/${
       configData.name
     }.woff') format('woff'),
-        url('../fonts/${process.env.STYLE}/${
+        url('fonts/${process.env.STYLE}/${
       configData.name
     }.ttf') format('truetype'),
-        url('../fonts/${process.env.STYLE}/${
+        url('fonts/${process.env.STYLE}/${
       configData.name
     }.svg#unicons') format('svg');
   font-weight: normal;

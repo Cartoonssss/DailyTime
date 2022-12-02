@@ -306,17 +306,17 @@ Class.extend = function (props) {
 
 	NewClass.prototype = proto;
 
-	// inherit parent's statics
+	// inherit parent's ../statics
 	for (var i in this) {
 		if (this.hasOwnProperty(i) && i !== 'prototype' && i !== '__super__') {
 			NewClass[i] = this[i];
 		}
 	}
 
-	// mix static properties into the class
-	if (props.statics) {
-		extend(NewClass, props.statics);
-		delete props.statics;
+	// mix ../static properties into the class
+	if (props.../statics) {
+		extend(NewClass, props.../statics);
+		delete props.../statics;
 	}
 
 	// mix includes into the prototype
@@ -1773,7 +1773,7 @@ var EPSG900913 = extend({}, EPSG3857, {
 });
 
 // @namespace SVG; @section
-// There are several static functions which can be called without instantiating L.SVG:
+// There are several ../static functions which can be called without instantiating L.SVG:
 
 // @function create(name: String): SVGElement
 // Returns a instance of [SVGElement](https://developer.mozilla.org/docs/Web/API/SVGElement),
@@ -1810,7 +1810,7 @@ function pointsToPath(rings, closed) {
  * @namespace Browser
  * @aka L.Browser
  *
- * A namespace with static properties for browser/feature detection used by Leaflet internally.
+ * A namespace with ../static properties for browser/feature detection used by Leaflet internally.
  *
  * @example
  *
@@ -5689,7 +5689,7 @@ var Handler = Class.extend({
 	// Called when the handler is disabled, should remove the event hooks added previously.
 });
 
-// @section There is static function which can be called without instantiating L.Handler:
+// @section There is ../static function which can be called without instantiating L.Handler:
 // @function addTo(map: Map, name: String): this
 // Adds a new Handler to the given map with the given name.
 Handler.addTo = function (map, name) {
@@ -8578,7 +8578,7 @@ var GeoJSON = FeatureGroup.extend({
 	 *
 	 * @option coordsToLatLng: Function = *
 	 * A `Function` that will be used for converting GeoJSON coordinates to `LatLng`s.
-	 * The default is the `coordsToLatLng` static method.
+	 * The default is the `coordsToLatLng` ../static method.
 	 */
 
 	initialize: function (geojson, options) {
@@ -8656,7 +8656,7 @@ var GeoJSON = FeatureGroup.extend({
 });
 
 // @section
-// There are several static functions which can be called without instantiating L.GeoJSON:
+// There are several ../static functions which can be called without instantiating L.GeoJSON:
 
 // @function geometryToLayer(featureData: Object, options?: GeoJSON options): Layer
 // Creates a `Layer` from a given GeoJSON feature. Can use a custom

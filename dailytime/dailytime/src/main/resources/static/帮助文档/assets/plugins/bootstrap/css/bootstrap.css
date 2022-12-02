@@ -2340,7 +2340,7 @@ select.form-control:focus::-ms-value {
   font-size: 1rem;
 }
 
-.form-control-static {
+.form-control-../static {
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
   margin-bottom: 0;
@@ -2349,11 +2349,11 @@ select.form-control:focus::-ms-value {
   border-width: 1px 0;
 }
 
-.form-control-static.form-control-sm, .input-group-sm > .form-control-static.form-control,
-.input-group-sm > .form-control-static.input-group-addon,
-.input-group-sm > .input-group-btn > .form-control-static.btn, .form-control-static.form-control-lg, .input-group-lg > .form-control-static.form-control,
-.input-group-lg > .form-control-static.input-group-addon,
-.input-group-lg > .input-group-btn > .form-control-static.btn {
+.form-control-../static.form-control-sm, .input-group-sm > .form-control-../static.form-control,
+.input-group-sm > .form-control-../static.input-group-addon,
+.input-group-sm > .input-group-btn > .form-control-../static.btn, .form-control-../static.form-control-lg, .input-group-lg > .form-control-../static.form-control,
+.input-group-lg > .form-control-../static.input-group-addon,
+.input-group-lg > .input-group-btn > .form-control-../static.btn {
   padding-right: 0;
   padding-left: 0;
 }
@@ -2419,7 +2419,7 @@ select.form-control-lg:not([size]):not([multiple]), .input-group-lg > select.for
 }
 
 .form-check-input:only-child {
-  position: static;
+  position: ../static;
 }
 
 .form-check-inline {
@@ -2571,7 +2571,7 @@ select.form-control-lg:not([size]):not([multiple]), .input-group-lg > select.for
     width: auto;
     vertical-align: middle;
   }
-  .form-inline .form-control-static {
+  .form-inline .form-control-../static {
     display: inline-block;
   }
   .form-inline .input-group {
@@ -2623,7 +2623,7 @@ select.form-control-lg:not([size]):not([multiple]), .input-group-lg > select.for
     padding-left: 0;
   }
   .form-inline .custom-control-indicator {
-    position: static;
+    position: ../static;
     display: inline-block;
     margin-right: 0.25rem;
     vertical-align: text-bottom;
@@ -4004,7 +4004,7 @@ tbody.collapse.show {
 
 @media (max-width: 575px) {
   .navbar-toggleable .navbar-nav .dropdown-menu {
-    position: static;
+    position: ../static;
     float: none;
   }
   .navbar-toggleable > .container {
@@ -4066,7 +4066,7 @@ tbody.collapse.show {
 
 @media (max-width: 767px) {
   .navbar-toggleable-sm .navbar-nav .dropdown-menu {
-    position: static;
+    position: ../static;
     float: none;
   }
   .navbar-toggleable-sm > .container {
@@ -4128,7 +4128,7 @@ tbody.collapse.show {
 
 @media (max-width: 991px) {
   .navbar-toggleable-md .navbar-nav .dropdown-menu {
-    position: static;
+    position: ../static;
     float: none;
   }
   .navbar-toggleable-md > .container {
@@ -4190,7 +4190,7 @@ tbody.collapse.show {
 
 @media (max-width: 1199px) {
   .navbar-toggleable-lg .navbar-nav .dropdown-menu {
-    position: static;
+    position: ../static;
     float: none;
   }
   .navbar-toggleable-lg > .container {
@@ -4266,7 +4266,7 @@ tbody.collapse.show {
 }
 
 .navbar-toggleable-xl .navbar-nav .dropdown-menu {
-  position: static;
+  position: ../static;
   float: none;
 }
 
@@ -7410,7 +7410,7 @@ a.bg-inverse:focus, a.bg-inverse:hover {
 }
 
 .sr-only-focusable:active, .sr-only-focusable:focus {
-  position: static;
+  position: ../static;
   width: auto;
   height: auto;
   margin: 0;

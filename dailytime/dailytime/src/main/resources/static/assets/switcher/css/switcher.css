@@ -519,7 +519,7 @@ a.evo-hist {
 }
 
 .bootstrap-select.btn-group .dropdown-menu.inner {
-    position: static;
+    position: ../static;
     border: 0;
     padding: 0;
     margin: 0;
@@ -664,11 +664,11 @@ a.evo-hist {
 }
 
 .bootstrap-select.btn-group.fit-width .btn .filter-option {
-    position: static;
+    position: ../static;
 }
 
 .bootstrap-select.btn-group.fit-width .btn .caret {
-    position: static;
+    position: ../static;
     top: auto;
     margin-top: -1px;
 }
@@ -755,25 +755,25 @@ a.evo-hist {
     background: rgba(255, 255, 255, 0.1);
 }
 .bg-img1 .form_holder{
-    background-image: url(../../images/media/bg-img1.jpg) !important;
+    background-image: url(images/media/bg-img1.jpg) !important;
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
 }
 .bg-img2 .form_holder{
-    background-image: url(../../images/media/bg-img2.jpg) !important;
+    background-image: url(images/media/bg-img2.jpg) !important;
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
 }
 .bg-img3 .form_holder{
-    background-image: url(../../images/media/bg-img3.jpg) !important;
+    background-image: url(images/media/bg-img3.jpg) !important;
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
 }
 .bg-img4 .form_holder{
-    background-image: url(../../images/media/bg-img4.jpg) !important;
+    background-image: url(images/media/bg-img4.jpg) !important;
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;

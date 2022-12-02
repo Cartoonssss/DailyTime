@@ -695,30 +695,30 @@ class BaseComponent {
   _queueCallback(callback, element, isAnimated = true) {
     executeAfterTransition(callback, element, isAnimated);
   }
-  /** Static */
+  /** ../static */
 
 
-  static getInstance(element) {
+  ../static getInstance(element) {
     return Data.get(getElement(element), this.DATA_KEY);
   }
 
-  static getOrCreateInstance(element, config = {}) {
+  ../static getOrCreateInstance(element, config = {}) {
     return this.getInstance(element) || new this(element, typeof config === 'object' ? config : null);
   }
 
-  static get VERSION() {
+  ../static get VERSION() {
     return VERSION;
   }
 
-  static get NAME() {
-    throw new Error('You have to implement the static method "NAME", for each component!');
+  ../static get NAME() {
+    throw new Error('You have to implement the ../static method "NAME", for each component!');
   }
 
-  static get DATA_KEY() {
+  ../static get DATA_KEY() {
     return `bs.${this.NAME}`;
   }
 
-  static get EVENT_KEY() {
+  ../static get EVENT_KEY() {
     return `.${this.DATA_KEY}`;
   }
 
@@ -777,7 +777,7 @@ const CLASS_NAME_SHOW$8 = 'show';
 
 class Alert extends BaseComponent {
   // Getters
-  static get NAME() {
+  ../static get NAME() {
     return NAME$d;
   } // Public
 
@@ -802,10 +802,10 @@ class Alert extends BaseComponent {
 
     EventHandler.trigger(this._element, EVENT_CLOSED);
     this.dispose();
-  } // Static
+  } // ../static
 
 
-  static jQueryInterface(config) {
+  ../static jQueryInterface(config) {
     return this.each(function () {
       const data = Alert.getOrCreateInstance(this);
 
@@ -866,7 +866,7 @@ const EVENT_CLICK_DATA_API$6 = `click${EVENT_KEY$b}${DATA_API_KEY$7}`;
 
 class Button extends BaseComponent {
   // Getters
-  static get NAME() {
+  ../static get NAME() {
     return NAME$c;
   } // Public
 
@@ -874,10 +874,10 @@ class Button extends BaseComponent {
   toggle() {
     // Toggle class and sync the `aria-pressed` attribute with the return value of the `.toggle()` method
     this._element.setAttribute('aria-pressed', this._element.classList.toggle(CLASS_NAME_ACTIVE$3));
-  } // Static
+  } // ../static
 
 
-  static jQueryInterface(config) {
+  ../static jQueryInterface(config) {
     return this.each(function () {
       const data = Button.getOrCreateInstance(this);
 
@@ -1157,11 +1157,11 @@ class Carousel extends BaseComponent {
   } // Getters
 
 
-  static get Default() {
+  ../static get Default() {
     return Default$a;
   }
 
-  static get NAME() {
+  ../static get NAME() {
     return NAME$b;
   } // Public
 
@@ -1516,10 +1516,10 @@ class Carousel extends BaseComponent {
     }
 
     return order === ORDER_PREV ? DIRECTION_RIGHT : DIRECTION_LEFT;
-  } // Static
+  } // ../static
 
 
-  static carouselInterface(element, config) {
+  ../static carouselInterface(element, config) {
     const data = Carousel.getOrCreateInstance(element, config);
     let {
       _config
@@ -1547,13 +1547,13 @@ class Carousel extends BaseComponent {
     }
   }
 
-  static jQueryInterface(config) {
+  ../static jQueryInterface(config) {
     return this.each(function () {
       Carousel.carouselInterface(this, config);
     });
   }
 
-  static dataApiClickHandler(event) {
+  ../static dataApiClickHandler(event) {
     const target = getElementFromSelector(this);
 
     if (!target || !target.classList.contains(CLASS_NAME_CAROUSEL)) {
@@ -1680,11 +1680,11 @@ class Collapse extends BaseComponent {
   } // Getters
 
 
-  static get Default() {
+  ../static get Default() {
     return Default$9;
   }
 
-  static get NAME() {
+  ../static get NAME() {
     return NAME$a;
   } // Public
 
@@ -1868,10 +1868,10 @@ class Collapse extends BaseComponent {
 
       elem.setAttribute('aria-expanded', isOpen);
     });
-  } // Static
+  } // ../static
 
 
-  static jQueryInterface(config) {
+  ../static jQueryInterface(config) {
     return this.each(function () {
       const _config = {};
 
@@ -2000,15 +2000,15 @@ class Dropdown extends BaseComponent {
   } // Getters
 
 
-  static get Default() {
+  ../static get Default() {
     return Default$8;
   }
 
-  static get DefaultType() {
+  ../static get DefaultType() {
     return DefaultType$8;
   }
 
-  static get NAME() {
+  ../static get NAME() {
     return NAME$9;
   } // Public
 
@@ -2146,11 +2146,11 @@ class Dropdown extends BaseComponent {
 
     const popperConfig = this._getPopperConfig();
 
-    const isDisplayStatic = popperConfig.modifiers.find(modifier => modifier.name === 'applyStyles' && modifier.enabled === false);
+    const isDisplay../static = popperConfig.modifiers.find(modifier => modifier.name === 'applyStyles' && modifier.enabled === false);
     this._popper = Popper.createPopper(referenceElement, this._menu, popperConfig);
 
-    if (isDisplayStatic) {
-      Manipulator.setDataAttribute(this._menu, 'popper', 'static');
+    if (isDisplay../static) {
+      Manipulator.setDataAttribute(this._menu, 'popper', '../static');
     }
   }
 
@@ -2217,9 +2217,9 @@ class Dropdown extends BaseComponent {
           offset: this._getOffset()
         }
       }]
-    }; // Disable Popper if we have a static display
+    }; // Disable Popper if we have a ../static display
 
-    if (this._config.display === 'static') {
+    if (this._config.display === '../static') {
       defaultBsPopperConfig.modifiers = [{
         name: 'applyStyles',
         enabled: false
@@ -2244,10 +2244,10 @@ class Dropdown extends BaseComponent {
 
 
     getNextActiveElement(items, target, key === ARROW_DOWN_KEY, !items.includes(target)).focus();
-  } // Static
+  } // ../static
 
 
-  static jQueryInterface(config) {
+  ../static jQueryInterface(config) {
     return this.each(function () {
       const data = Dropdown.getOrCreateInstance(this, config);
 
@@ -2263,7 +2263,7 @@ class Dropdown extends BaseComponent {
     });
   }
 
-  static clearMenus(event) {
+  ../static clearMenus(event) {
     if (event && (event.button === RIGHT_MOUSE_BUTTON || event.type === 'keyup' && event.key !== TAB_KEY$1)) {
       return;
     }
@@ -2307,11 +2307,11 @@ class Dropdown extends BaseComponent {
     }
   }
 
-  static getParentFromElement(element) {
+  ../static getParentFromElement(element) {
     return getElementFromSelector(element) || element.parentNode;
   }
 
-  static dataApiKeydownHandler(event) {
+  ../static dataApiKeydownHandler(event) {
     // If not input/textarea:
     //  - And not a key in REGEXP_KEYDOWN => not a dropdown command
     // If input/textarea:
@@ -2756,7 +2756,7 @@ const EVENT_CLICK_DATA_API$2 = `click${EVENT_KEY$6}${DATA_API_KEY$3}`;
 const CLASS_NAME_OPEN = 'modal-open';
 const CLASS_NAME_FADE$3 = 'fade';
 const CLASS_NAME_SHOW$4 = 'show';
-const CLASS_NAME_STATIC = 'modal-static';
+const CLASS_NAME_../static = 'modal-../static';
 const OPEN_SELECTOR$1 = '.modal.show';
 const SELECTOR_DIALOG = '.modal-dialog';
 const SELECTOR_MODAL_BODY = '.modal-body';
@@ -2781,11 +2781,11 @@ class Modal extends BaseComponent {
   } // Getters
 
 
-  static get Default() {
+  ../static get Default() {
     return Default$5;
   }
 
-  static get NAME() {
+  ../static get NAME() {
     return NAME$6;
   } // Public
 
@@ -2885,7 +2885,7 @@ class Modal extends BaseComponent {
   _initializeBackDrop() {
     return new Backdrop({
       isVisible: Boolean(this._config.backdrop),
-      // 'static' option will be translated to true, and booleans will keep their value
+      // '../static' option will be translated to true, and booleans will keep their value
       isAnimated: this._isAnimated()
     });
   }
@@ -3007,7 +3007,7 @@ class Modal extends BaseComponent {
 
       if (this._config.backdrop === true) {
         this.hide();
-      } else if (this._config.backdrop === 'static') {
+      } else if (this._config.backdrop === '../static') {
         this._triggerBackdropTransition();
       }
     });
@@ -3033,7 +3033,7 @@ class Modal extends BaseComponent {
     } = this._element;
     const isModalOverflowing = scrollHeight > document.documentElement.clientHeight; // return if the following background transition hasn't yet completed
 
-    if (!isModalOverflowing && style.overflowY === 'hidden' || classList.contains(CLASS_NAME_STATIC)) {
+    if (!isModalOverflowing && style.overflowY === 'hidden' || classList.contains(CLASS_NAME_../static)) {
       return;
     }
 
@@ -3041,10 +3041,10 @@ class Modal extends BaseComponent {
       style.overflowY = 'hidden';
     }
 
-    classList.add(CLASS_NAME_STATIC);
+    classList.add(CLASS_NAME_../static);
 
     this._queueCallback(() => {
-      classList.remove(CLASS_NAME_STATIC);
+      classList.remove(CLASS_NAME_../static);
 
       if (!isModalOverflowing) {
         this._queueCallback(() => {
@@ -3078,10 +3078,10 @@ class Modal extends BaseComponent {
   _resetAdjustments() {
     this._element.style.paddingLeft = '';
     this._element.style.paddingRight = '';
-  } // Static
+  } // ../static
 
 
-  static jQueryInterface(config, relatedTarget) {
+  ../static jQueryInterface(config, relatedTarget) {
     return this.each(function () {
       const data = Modal.getOrCreateInstance(this, config);
 
@@ -3200,11 +3200,11 @@ class Offcanvas extends BaseComponent {
   } // Getters
 
 
-  static get NAME() {
+  ../static get NAME() {
     return NAME$5;
   }
 
-  static get Default() {
+  ../static get Default() {
     return Default$4;
   } // Public
 
@@ -3336,10 +3336,10 @@ class Offcanvas extends BaseComponent {
         this.hide();
       }
     });
-  } // Static
+  } // ../static
 
 
-  static jQueryInterface(config) {
+  ../static jQueryInterface(config) {
     return this.each(function () {
       const data = Offcanvas.getOrCreateInstance(this, config);
 
@@ -3625,19 +3625,19 @@ class Tooltip extends BaseComponent {
   } // Getters
 
 
-  static get Default() {
+  ../static get Default() {
     return Default$3;
   }
 
-  static get NAME() {
+  ../static get NAME() {
     return NAME$4;
   }
 
-  static get Event() {
+  ../static get Event() {
     return Event$2;
   }
 
-  static get DefaultType() {
+  ../static get DefaultType() {
     return DefaultType$3;
   } // Public
 
@@ -4194,10 +4194,10 @@ class Tooltip extends BaseComponent {
 
       this._popper = null;
     }
-  } // Static
+  } // ../static
 
 
-  static jQueryInterface(config) {
+  ../static jQueryInterface(config) {
     return this.each(function () {
       const data = Tooltip.getOrCreateInstance(this, config);
 
@@ -4270,19 +4270,19 @@ const SELECTOR_CONTENT = '.popover-body';
 
 class Popover extends Tooltip {
   // Getters
-  static get Default() {
+  ../static get Default() {
     return Default$2;
   }
 
-  static get NAME() {
+  ../static get NAME() {
     return NAME$3;
   }
 
-  static get Event() {
+  ../static get Event() {
     return Event$1;
   }
 
-  static get DefaultType() {
+  ../static get DefaultType() {
     return DefaultType$2;
   } // Overrides
 
@@ -4304,10 +4304,10 @@ class Popover extends Tooltip {
 
   _getBasicClassPrefix() {
     return CLASS_PREFIX;
-  } // Static
+  } // ../static
 
 
-  static jQueryInterface(config) {
+  ../static jQueryInterface(config) {
     return this.each(function () {
       const data = Popover.getOrCreateInstance(this, config);
 
@@ -4395,11 +4395,11 @@ class ScrollSpy extends BaseComponent {
   } // Getters
 
 
-  static get Default() {
+  ../static get Default() {
     return Default$1;
   }
 
-  static get NAME() {
+  ../static get NAME() {
     return NAME$2;
   } // Public
 
@@ -4528,10 +4528,10 @@ class ScrollSpy extends BaseComponent {
 
   _clear() {
     SelectorEngine.find(SELECTOR_LINK_ITEMS, this._config.target).filter(node => node.classList.contains(CLASS_NAME_ACTIVE$1)).forEach(node => node.classList.remove(CLASS_NAME_ACTIVE$1));
-  } // Static
+  } // ../static
 
 
-  static jQueryInterface(config) {
+  ../static jQueryInterface(config) {
     return this.each(function () {
       const data = ScrollSpy.getOrCreateInstance(this, config);
 
@@ -4607,7 +4607,7 @@ const SELECTOR_DROPDOWN_ACTIVE_CHILD = ':scope > .dropdown-menu .active';
 
 class Tab extends BaseComponent {
   // Getters
-  static get NAME() {
+  ../static get NAME() {
     return NAME$1;
   } // Public
 
@@ -4719,10 +4719,10 @@ class Tab extends BaseComponent {
     if (callback) {
       callback();
     }
-  } // Static
+  } // ../static
 
 
-  static jQueryInterface(config) {
+  ../static jQueryInterface(config) {
     return this.each(function () {
       const data = Tab.getOrCreateInstance(this);
 
@@ -4821,15 +4821,15 @@ class Toast extends BaseComponent {
   } // Getters
 
 
-  static get DefaultType() {
+  ../static get DefaultType() {
     return DefaultType;
   }
 
-  static get Default() {
+  ../static get Default() {
     return Default;
   }
 
-  static get NAME() {
+  ../static get NAME() {
     return NAME;
   } // Public
 
@@ -4966,10 +4966,10 @@ class Toast extends BaseComponent {
   _clearTimeout() {
     clearTimeout(this._timeout);
     this._timeout = null;
-  } // Static
+  } // ../static
 
 
-  static jQueryInterface(config) {
+  ../static jQueryInterface(config) {
     return this.each(function () {
       const data = Toast.getOrCreateInstance(this, config);
 

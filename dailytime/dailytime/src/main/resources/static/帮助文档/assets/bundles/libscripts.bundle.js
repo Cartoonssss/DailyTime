@@ -3048,7 +3048,7 @@ if (function(a, b) {
                 var d, e, f, g, h, i, j, k = pa.css(a, "position"),
                     l = pa(a),
                     m = {};
-                "static" === k && (a.style.position = "relative"), h = l.offset(), f = pa.css(a, "top"), i = pa.css(a, "left"), j = ("absolute" === k || "fixed" === k) && (f + i).indexOf("auto") > -1, j ? (d = l.position(), g = d.top, e = d.left) : (g = parseFloat(f) || 0, e = parseFloat(i) || 0), pa.isFunction(b) && (b = b.call(a, c, pa.extend({}, h))), null != b.top && (m.top = b.top - h.top + g), null != b.left && (m.left = b.left - h.left + e), "using" in b ? b.using.call(a, m) : l.css(m)
+                "../static" === k && (a.style.position = "relative"), h = l.offset(), f = pa.css(a, "top"), i = pa.css(a, "left"), j = ("absolute" === k || "fixed" === k) && (f + i).indexOf("auto") > -1, j ? (d = l.position(), g = d.top, e = d.left) : (g = parseFloat(f) || 0, e = parseFloat(i) || 0), pa.isFunction(b) && (b = b.call(a, c, pa.extend({}, h))), null != b.top && (m.top = b.top - h.top + g), null != b.left && (m.left = b.left - h.left + e), "using" in b ? b.using.call(a, m) : l.css(m)
             }
         }, pa.fn.extend({
             offset: function(a) {
@@ -3082,7 +3082,7 @@ if (function(a, b) {
             },
             offsetParent: function() {
                 return this.map(function() {
-                    for (var a = this.offsetParent; a && "static" === pa.css(a, "position");) a = a.offsetParent;
+                    for (var a = this.offsetParent; a && "../static" === pa.css(a, "position");) a = a.offsetParent;
                     return a || Ya
                 })
             }
@@ -3931,7 +3931,7 @@ function() {
                             var e = f.supportsTransitionEnd() && d;
                             if (this._backdrop = document.createElement("div"), this._backdrop.className = l.BACKDROP, d && a(this._backdrop).addClass(d), a(this._backdrop).appendTo(document.body), a(this._element).on(k.CLICK_DISMISS, function(a) {
                                     if (c._ignoreBackdropClick) return void(c._ignoreBackdropClick = !1);
-                                    a.target === a.currentTarget && ("static" === c._config.backdrop ? c._element.focus() : c.hide())
+                                    a.target === a.currentTarget && ("../static" === c._config.backdrop ? c._element.focus() : c.hide())
                                 }), e && f.reflow(this._backdrop), a(this._backdrop).addClass(l.SHOW), !b) return;
                             if (!e) return void b();
                             a(this._backdrop).one(f.TRANSITION_END, b).emulateTransitionEnd(150)

@@ -1895,7 +1895,7 @@
                 }
             }
 
-            // VMLWidth option allows you to set static width for the legend
+            // VMLWidth option allows you to set ../static width for the legend
             // only for VML render because text.getBBox() returns wrong values on IE6/7
             if (Raphael.type !== "SVG" && legendOptions.VMLWidth)
                 width = legendOptions.VMLWidth;

@@ -40,15 +40,15 @@
     ***************************************************************************** */
     /* global Reflect, Promise */
 
-    var extendStatics = function(d, b) {
-        extendStatics = Object.setPrototypeOf ||
+    var extend../statics = function(d, b) {
+        extend../statics = Object.setPrototypeOf ||
             ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
             function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
-        return extendStatics(d, b);
+        return extend../statics(d, b);
     };
 
     function __extends(d, b) {
-        extendStatics(d, b);
+        extend../statics(d, b);
         function __() { this.constructor = d; }
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     }
@@ -8084,14 +8084,14 @@
 
       target.registerClass = function (clz) {
         // `type` should not be a "instance memeber".
-        // If using TS class, should better declared as `static type = 'series.pie'`.
+        // If using TS class, should better declared as `../static type = 'series.pie'`.
         // otherwise users have to mount `type` on prototype manually.
         // For backward compat and enable instance visit type via `this.type`,
         // we stil support fetch `type` from prototype.
         var componentFullType = clz.type || clz.prototype.type;
 
         if (componentFullType) {
-          checkClassType(componentFullType); // If only static type declared, we assign it to prototype mandatorily.
+          checkClassType(componentFullType); // If only ../static type declared, we assign it to prototype mandatorily.
 
           clz.prototype.type = componentFullType;
           var componentTypeInfo = parseClassType(componentFullType);
@@ -9751,11 +9751,11 @@
         };
         PathProxy.prototype.fill = function (ctx) {
             ctx && ctx.fill();
-            this.toStatic();
+            this.to../static();
         };
         PathProxy.prototype.stroke = function (ctx) {
             ctx && ctx.stroke();
-            this.toStatic();
+            this.to../static();
         };
         PathProxy.prototype.setLineDash = function (lineDash) {
             if (lineDash instanceof Array) {
@@ -9935,7 +9935,7 @@
             y1 = (this._yi + 2 * y1) / 3;
             this._dashedBezierTo(x1, y1, x2, y2, x3, y3);
         };
-        PathProxy.prototype.toStatic = function () {
+        PathProxy.prototype.to../static = function () {
             if (!this._saveData) {
                 return;
             }
@@ -13024,7 +13024,7 @@
             }
             prevCmd = cmd;
         }
-        path.toStatic();
+        path.to../static();
         return path;
     }
     var SVGPath = (function (_super) {
@@ -17086,26 +17086,26 @@
        *
        * (A) If using class declaration in typescript (since echarts 5):
        * ```ts
-       * import {ComponentOption} from '../model/option';
+       * import {ComponentOption} from 'model/option';
        * export interface XxxOption extends ComponentOption {
        *     aaa: number
        * }
        * export class XxxModel extends Component {
-       *     static type = 'xxx';
-       *     static defaultOption: XxxOption = {
+       *     ../static type = 'xxx';
+       *     ../static defaultOption: XxxOption = {
        *         aaa: 123
        *     }
        * }
        * Component.registerClass(XxxModel);
        * ```
        * ```ts
-       * import {inheritDefaultOption} from '../util/component';
+       * import {inheritDefaultOption} from 'util/component';
        * import {XxxModel, XxxOption} from './XxxModel';
        * export interface XxxSubOption extends XxxOption {
        *     bbb: number
        * }
        * class XxxSubModel extends XxxModel {
-       *     static defaultOption: XxxSubOption = inheritDefaultOption(XxxModel.defaultOption, {
+       *     ../static defaultOption: XxxSubOption = inheritDefaultOption(XxxModel.defaultOption, {
        *         bbb: 456
        *     })
        *     fn() {
@@ -17143,7 +17143,7 @@
         // declaration, defaultOption should be merged manually.
 
         if (!isExtendedClass(ctor)) {
-          // When using ts class, defaultOption must be declared as static.
+          // When using ts class, defaultOption must be declared as ../static.
           return ctor.defaultOption;
         } // FIXME: remove this approach?
 
@@ -22038,7 +22038,7 @@
       function TooltipMarkupStyleCreator() {
         this.richTextStyles = {}; // Notice that "generate a style name" usuall happens repeatly when mouse moving and
         // displaying a tooltip. So we put the `_nextStyleNameId` as a member of each creator
-        // rather than static shared by all creators (which will cause it increase to fast).
+        // rather than ../static shared by all creators (which will cause it increase to fast).
 
         this._nextStyleNameId = getRandomIdBase();
       }
@@ -26519,7 +26519,7 @@
                 path.setLineDashOffset(lineDashOffset);
             }
             el.buildPath(path, el.shape, inBatch);
-            path.toStatic();
+            path.to../static();
             el.pathUpdated();
         }
         if (needsRebuild) {
@@ -28860,7 +28860,7 @@
     * under the License.
     */
     // Fix for 钓鱼岛
-    // let Region = require('../Region');
+    // let Region = require('Region');
     // let zrUtil = require('zrender/lib/core/util');
     // let geoCoord = [126, 25];
     var points$2 = [[[123.45165252685547, 25.73527164402261], [123.49731445312499, 25.73527164402261], [123.49731445312499, 25.750734064600884], [123.45165252685547, 25.750734064600884], [123.45165252685547, 25.73527164402261]]];

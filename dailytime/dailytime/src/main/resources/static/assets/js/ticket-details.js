@@ -49,7 +49,7 @@ $(function () {
     function selectClient(client) {
         if (!client.id) { return client.text; }
         var $client = $(
-            '<span><img src="../assets/images/users/' + client.element.value.toLowerCase() + '.jpg" class="rounded-circle avatar-sm ms-1" /> '
+            '<span><img src="../static/assets/images/users/' + client.element.value.toLowerCase() + '.jpg" class="rounded-circle avatar-sm ms-1" /> '
             + client.text + '</span>'
         );
         return $client;

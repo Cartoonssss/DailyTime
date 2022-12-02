@@ -407,7 +407,7 @@ pre {
 .sr-only-focusable {
 	&:active,
 	&:focus {
-		position: static;
+		position: ../static;
 		width: auto;
 		height: auto;
 		overflow: visible;

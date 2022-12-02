@@ -100,7 +100,7 @@ $.widget = function( name, base, prototype ) {
 		}
 	};
 
-	// Extend with the existing constructor to carry over any static properties
+	// Extend with the existing constructor to carry over any ../static properties
 	$.extend( constructor, existingConstructor, {
 		version: prototype.version,
 
@@ -2311,7 +2311,7 @@ if ( $.uiBackCompat !== false ) {
 			wrapper = element.parent();
 
 			// Transfer positioning properties to the wrapper
-			if ( element.css( "position" ) === "static" ) {
+			if ( element.css( "position" ) === "../static" ) {
 				wrapper.css( { position: "relative" } );
 				element.css( { position: "relative" } );
 			} else {
@@ -2490,7 +2490,7 @@ $.extend( $.effects, {
 		.outerWidth( element.outerWidth() )
 		.outerHeight( element.outerHeight() );
 
-		if ( /^(static|relative)/.test( cssPosition ) ) {
+		if ( /^(../static|relative)/.test( cssPosition ) ) {
 			cssPosition = "absolute";
 
 			placeholder = $( "<" + element[ 0 ].nodeName + ">" ).insertAfter( element ).css( {
@@ -3589,7 +3589,7 @@ var effectsEffectSize = $.effects.define( "size", function( options, done ) {
 
 			if ( !restore ) {
 				element
-					.css( "position", position === "static" ? "relative" : position )
+					.css( "position", position === "../static" ? "relative" : position )
 					.offset( offset );
 
 				// Need to save style here so that automatic style restoration
@@ -4212,11 +4212,11 @@ var labels = $.fn.labels = function() {
 
 var scrollParent = $.fn.scrollParent = function( includeHidden ) {
 	var position = this.css( "position" ),
-		excludeStaticParent = position === "absolute",
+		exclude../staticParent = position === "absolute",
 		overflowRegex = includeHidden ? /(auto|scroll|hidden)/ : /(auto|scroll)/,
 		scrollParent = this.parents().filter( function() {
 			var parent = $( this );
-			if ( excludeStaticParent && parent.css( "position" ) === "static" ) {
+			if ( exclude../staticParent && parent.css( "position" ) === "../static" ) {
 				return false;
 			}
 			return overflowRegex.test( parent.css( "overflow" ) + parent.css( "overflow-y" ) +
@@ -4309,9 +4309,9 @@ var uniqueId = $.fn.extend( {
 // jscs:enable maximumLineLength
 //>>docs: http://api.jqueryui.com/accordion/
 //>>demos: http://jqueryui.com/accordion/
-//>>css.structure: ../../themes/base/core.css
-//>>css.structure: ../../themes/base/accordion.css
-//>>css.theme: ../../themes/base/theme.css
+//>>css.structure: themes/base/core.css
+//>>css.structure: themes/base/accordion.css
+//>>css.theme: themes/base/theme.css
 
 
 
@@ -4934,9 +4934,9 @@ var safeActiveElement = $.ui.safeActiveElement = function( document ) {
 //>>description: Creates nestable menus.
 //>>docs: http://api.jqueryui.com/menu/
 //>>demos: http://jqueryui.com/menu/
-//>>css.structure: ../../themes/base/core.css
-//>>css.structure: ../../themes/base/menu.css
-//>>css.theme: ../../themes/base/theme.css
+//>>css.structure: themes/base/core.css
+//>>css.structure: themes/base/menu.css
+//>>css.theme: themes/base/theme.css
 
 
 
@@ -5589,9 +5589,9 @@ var widgetsMenu = $.widget( "ui.menu", {
 //>>description: Lists suggested words as the user is typing.
 //>>docs: http://api.jqueryui.com/autocomplete/
 //>>demos: http://jqueryui.com/autocomplete/
-//>>css.structure: ../../themes/base/core.css
-//>>css.structure: ../../themes/base/autocomplete.css
-//>>css.theme: ../../themes/base/theme.css
+//>>css.structure: themes/base/core.css
+//>>css.structure: themes/base/autocomplete.css
+//>>css.theme: themes/base/theme.css
 
 
 
@@ -6253,9 +6253,9 @@ var widgetsAutocomplete = $.ui.autocomplete;
 //>>description: Visually groups form control widgets
 //>>docs: http://api.jqueryui.com/controlgroup/
 //>>demos: http://jqueryui.com/controlgroup/
-//>>css.structure: ../../themes/base/core.css
-//>>css.structure: ../../themes/base/controlgroup.css
-//>>css.theme: ../../themes/base/theme.css
+//>>css.structure: themes/base/core.css
+//>>css.structure: themes/base/controlgroup.css
+//>>css.theme: themes/base/theme.css
 
 
 var controlgroupCornerRegex = /ui-corner-([a-z]){2,6}/g;
@@ -6538,10 +6538,10 @@ var widgetsControlgroup = $.widget( "ui.controlgroup", {
 //>>description: Enhances a form with multiple themeable checkboxes or radio buttons.
 //>>docs: http://api.jqueryui.com/checkboxradio/
 //>>demos: http://jqueryui.com/checkboxradio/
-//>>css.structure: ../../themes/base/core.css
-//>>css.structure: ../../themes/base/button.css
-//>>css.structure: ../../themes/base/checkboxradio.css
-//>>css.theme: ../../themes/base/theme.css
+//>>css.structure: themes/base/core.css
+//>>css.structure: themes/base/button.css
+//>>css.structure: themes/base/checkboxradio.css
+//>>css.theme: themes/base/theme.css
 
 
 
@@ -6808,9 +6808,9 @@ var widgetsCheckboxradio = $.ui.checkboxradio;
 //>>description: Enhances a form with themeable buttons.
 //>>docs: http://api.jqueryui.com/button/
 //>>demos: http://jqueryui.com/button/
-//>>css.structure: ../../themes/base/core.css
-//>>css.structure: ../../themes/base/button.css
-//>>css.theme: ../../themes/base/theme.css
+//>>css.structure: themes/base/core.css
+//>>css.structure: themes/base/button.css
+//>>css.theme: themes/base/theme.css
 
 
 
@@ -7176,9 +7176,9 @@ var widgetsButton = $.ui.button;
 //>>description: Displays a calendar from an input or inline for selecting dates.
 //>>docs: http://api.jqueryui.com/datepicker/
 //>>demos: http://jqueryui.com/datepicker/
-//>>css.structure: ../../themes/base/core.css
-//>>css.structure: ../../themes/base/datepicker.css
-//>>css.theme: ../../themes/base/theme.css
+//>>css.structure: themes/base/core.css
+//>>css.structure: themes/base/datepicker.css
+//>>css.theme: themes/base/theme.css
 
 
 
@@ -7946,7 +7946,7 @@ $.extend( Datepicker.prototype, {
 		// and adjust position before showing
 		offset = $.datepicker._checkOffset( inst, offset, isFixed );
 		inst.dpDiv.css( { position: ( $.datepicker._inDialog && $.blockUI ?
-			"static" : ( isFixed ? "fixed" : "absolute" ) ), display: "none",
+			"../static" : ( isFixed ? "fixed" : "absolute" ) ), display: "none",
 			left: offset.left + "px", top: offset.top + "px" } );
 
 		if ( !inst.inline ) {
@@ -8765,8 +8765,8 @@ $.extend( Datepicker.prototype, {
 			return startDate;
 	},
 
-	/* Attach the onxxx handlers.  These are declared statically so
-	 * they work with static code transformers like Caja.
+	/* Attach the onxxx handlers.  These are declared ../statically so
+	 * they work with ../static code transformers like Caja.
 	 */
 	_attachHandlers: function( inst ) {
 		var stepMonths = this._get( inst, "stepMonths" ),
@@ -9541,7 +9541,7 @@ var safeBlur = $.ui.safeBlur = function( element ) {
 //>>description: Enables dragging functionality for any element.
 //>>docs: http://api.jqueryui.com/draggable/
 //>>demos: http://jqueryui.com/draggable/
-//>>css.structure: ../../themes/base/draggable.css
+//>>css.structure: themes/base/draggable.css
 
 
 
@@ -10771,9 +10771,9 @@ var widgetsDraggable = $.ui.draggable;
 //>>description: Enables resize functionality for any element.
 //>>docs: http://api.jqueryui.com/resizable/
 //>>demos: http://jqueryui.com/resizable/
-//>>css.structure: ../../themes/base/core.css
-//>>css.structure: ../../themes/base/resizable.css
-//>>css.theme: ../../themes/base/theme.css
+//>>css.structure: themes/base/core.css
+//>>css.structure: themes/base/resizable.css
+//>>css.theme: themes/base/theme.css
 
 
 
@@ -10889,7 +10889,7 @@ $.widget( "ui.resizable", $.ui.mouse, {
 			this.originalElement.css( "resize", "none" );
 
 			this._proportionallyResizeElements.push( this.originalElement.css( {
-				position: "static",
+				position: "../static",
 				zoom: 1,
 				display: "block"
 			} ) );
@@ -11659,7 +11659,7 @@ $.ui.plugin.add( "resizable", "containment", {
 			ce = that.containerElement,
 			continueResize = true;
 
-		if ( ce[ 0 ] !== document && ( /static/ ).test( ce.css( "position" ) ) ) {
+		if ( ce[ 0 ] !== document && ( /../static/assets ).test( ce.css( "position" ) ) ) {
 			cop = co;
 		}
 
@@ -11753,7 +11753,7 @@ $.ui.plugin.add( "resizable", "containment", {
 			} );
 		}
 
-		if ( that._helper && !o.animate && ( /static/ ).test( ce.css( "position" ) ) ) {
+		if ( that._helper && !o.animate && ( /../static/assets ).test( ce.css( "position" ) ) ) {
 			$( this ).css( {
 				left: ho.left - cop.left - co.left,
 				width: w,
@@ -11955,9 +11955,9 @@ var widgetsResizable = $.ui.resizable;
 //>>description: Displays customizable dialog windows.
 //>>docs: http://api.jqueryui.com/dialog/
 //>>demos: http://jqueryui.com/dialog/
-//>>css.structure: ../../themes/base/core.css
-//>>css.structure: ../../themes/base/dialog.css
-//>>css.theme: ../../themes/base/theme.css
+//>>css.structure: themes/base/core.css
+//>>css.structure: themes/base/dialog.css
+//>>css.theme: themes/base/theme.css
 
 
 
@@ -13353,9 +13353,9 @@ var widgetsDroppable = $.ui.droppable;
 // jscs:enable maximumLineLength
 //>>docs: http://api.jqueryui.com/progressbar/
 //>>demos: http://jqueryui.com/progressbar/
-//>>css.structure: ../../themes/base/core.css
-//>>css.structure: ../../themes/base/progressbar.css
-//>>css.theme: ../../themes/base/theme.css
+//>>css.structure: themes/base/core.css
+//>>css.structure: themes/base/progressbar.css
+//>>css.theme: themes/base/theme.css
 
 
 
@@ -13383,7 +13383,7 @@ var widgetsProgressbar = $.widget( "ui.progressbar", {
 
 		this.element.attr( {
 
-			// Only set static values; aria-valuenow and aria-valuemax are
+			// Only set ../static values; aria-valuenow and aria-valuemax are
 			// set inside _refreshValue()
 			role: "progressbar",
 			"aria-valuemin": this.min
@@ -13515,7 +13515,7 @@ var widgetsProgressbar = $.widget( "ui.progressbar", {
 //>>description: Allows groups of elements to be selected with the mouse.
 //>>docs: http://api.jqueryui.com/selectable/
 //>>demos: http://jqueryui.com/selectable/
-//>>css.structure: ../../themes/base/selectable.css
+//>>css.structure: themes/base/selectable.css
 
 
 
@@ -13812,9 +13812,9 @@ var widgetsSelectable = $.widget( "ui.selectable", $.ui.mouse, {
 // jscs:enable maximumLineLength
 //>>docs: http://api.jqueryui.com/selectmenu/
 //>>demos: http://jqueryui.com/selectmenu/
-//>>css.structure: ../../themes/base/core.css
-//>>css.structure: ../../themes/base/selectmenu.css, ../../themes/base/button.css
-//>>css.theme: ../../themes/base/theme.css
+//>>css.structure: themes/base/core.css
+//>>css.structure: themes/base/selectmenu.css, themes/base/button.css
+//>>css.theme: themes/base/theme.css
 
 
 
@@ -14476,9 +14476,9 @@ var widgetsSelectmenu = $.widget( "ui.selectmenu", [ $.ui.formResetMixin, {
 //>>description: Displays a flexible slider with ranges and accessibility via keyboard.
 //>>docs: http://api.jqueryui.com/slider/
 //>>demos: http://jqueryui.com/slider/
-//>>css.structure: ../../themes/base/core.css
-//>>css.structure: ../../themes/base/slider.css
-//>>css.theme: ../../themes/base/theme.css
+//>>css.structure: themes/base/core.css
+//>>css.structure: themes/base/slider.css
+//>>css.theme: themes/base/theme.css
 
 
 
@@ -15212,7 +15212,7 @@ var widgetsSlider = $.widget( "ui.slider", $.ui.mouse, {
 //>>description: Enables items in a list to be sorted using the mouse.
 //>>docs: http://api.jqueryui.com/sortable/
 //>>demos: http://jqueryui.com/sortable/
-//>>css.structure: ../../themes/base/sortable.css
+//>>css.structure: themes/base/sortable.css
 
 
 
@@ -15328,7 +15328,7 @@ var widgetsSortable = $.widget( "ui.sortable", $.ui.mouse, {
 			return false;
 		}
 
-		if ( this.options.disabled || this.options.type === "static" ) {
+		if ( this.options.disabled || this.options.type === "../static" ) {
 			return false;
 		}
 
@@ -16607,7 +16607,7 @@ var widgetsSortable = $.widget( "ui.sortable", $.ui.mouse, {
 
 		if ( this.helper[ 0 ] === this.currentItem[ 0 ] ) {
 			for ( i in this._storedCSS ) {
-				if ( this._storedCSS[ i ] === "auto" || this._storedCSS[ i ] === "static" ) {
+				if ( this._storedCSS[ i ] === "auto" || this._storedCSS[ i ] === "../static" ) {
 					this._storedCSS[ i ] = "";
 				}
 			}
@@ -16748,9 +16748,9 @@ var widgetsSortable = $.widget( "ui.sortable", $.ui.mouse, {
 //>>description: Displays buttons to easily input numbers via the keyboard or mouse.
 //>>docs: http://api.jqueryui.com/spinner/
 //>>demos: http://jqueryui.com/spinner/
-//>>css.structure: ../../themes/base/core.css
-//>>css.structure: ../../themes/base/spinner.css
-//>>css.theme: ../../themes/base/theme.css
+//>>css.structure: themes/base/core.css
+//>>css.structure: themes/base/spinner.css
+//>>css.theme: themes/base/theme.css
 
 
 
@@ -17306,9 +17306,9 @@ var widgetsSpinner = $.ui.spinner;
 //>>description: Transforms a set of container elements into a tab structure.
 //>>docs: http://api.jqueryui.com/tabs/
 //>>demos: http://jqueryui.com/tabs/
-//>>css.structure: ../../themes/base/core.css
-//>>css.structure: ../../themes/base/tabs.css
-//>>css.theme: ../../themes/base/theme.css
+//>>css.structure: themes/base/core.css
+//>>css.structure: themes/base/tabs.css
+//>>css.theme: themes/base/theme.css
 
 
 
@@ -18212,9 +18212,9 @@ var widgetsTabs = $.ui.tabs;
 //>>description: Shows additional information for any element on hover or focus.
 //>>docs: http://api.jqueryui.com/tooltip/
 //>>demos: http://jqueryui.com/tooltip/
-//>>css.structure: ../../themes/base/core.css
-//>>css.structure: ../../themes/base/tooltip.css
-//>>css.theme: ../../themes/base/theme.css
+//>>css.structure: themes/base/core.css
+//>>css.structure: themes/base/tooltip.css
+//>>css.theme: themes/base/theme.css
 
 
 

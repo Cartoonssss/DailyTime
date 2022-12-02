@@ -20,7 +20,7 @@ if (typeof jQuery === 'undefined') {
 
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
 
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, ../staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (../staticProps) defineProperties(Constructor, ../staticProps); return Constructor; }; }();
 
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
@@ -295,7 +295,7 @@ var Alert = function ($) {
       $(element).detach().trigger(Event.CLOSED).remove();
     };
 
-    // static
+    // ../static
 
     Alert._jQueryInterface = function _jQueryInterface(config) {
       return this.each(function () {
@@ -456,7 +456,7 @@ var Button = function ($) {
       this._element = null;
     };
 
-    // static
+    // ../static
 
     Button._jQueryInterface = function _jQueryInterface(config) {
       return this.each(function () {
@@ -893,7 +893,7 @@ var Carousel = function ($) {
       }
     };
 
-    // static
+    // ../static
 
     Carousel._jQueryInterface = function _jQueryInterface(config) {
       return this.each(function () {
@@ -1274,7 +1274,7 @@ var Collapse = function ($) {
       }
     };
 
-    // static
+    // ../static
 
     Collapse._getTargetFromElement = function _getTargetFromElement(element) {
       var selector = Util.getSelectorFromElement(element);
@@ -1479,7 +1479,7 @@ var Dropdown = function ($) {
       $(this._element).on(Event.CLICK, this.toggle);
     };
 
-    // static
+    // ../static
 
     Dropdown._jQueryInterface = function _jQueryInterface(config) {
       return this.each(function () {
@@ -1974,7 +1974,7 @@ var Modal = function ($) {
           if (event.target !== event.currentTarget) {
             return;
           }
-          if (_this16._config.backdrop === 'static') {
+          if (_this16._config.backdrop === '../static') {
             _this16._element.focus();
           } else {
             _this16.hide();
@@ -2072,7 +2072,7 @@ var Modal = function ($) {
       return scrollbarWidth;
     };
 
-    // static
+    // ../static
 
     Modal._jQueryInterface = function _jQueryInterface(config, relatedTarget) {
       return this.each(function () {
@@ -2409,7 +2409,7 @@ var ScrollSpy = function ($) {
       $(this._selector).filter(Selector.ACTIVE).removeClass(ClassName.ACTIVE);
     };
 
-    // static
+    // ../static
 
     ScrollSpy._jQueryInterface = function _jQueryInterface(config) {
       return this.each(function () {
@@ -2672,7 +2672,7 @@ var Tab = function ($) {
       }
     };
 
-    // static
+    // ../static
 
     Tab._jQueryInterface = function _jQueryInterface(config) {
       return this.each(function () {
@@ -3255,7 +3255,7 @@ var Tooltip = function ($) {
       return config;
     };
 
-    // static
+    // ../static
 
     Tooltip._jQueryInterface = function _jQueryInterface(config) {
       return this.each(function () {
@@ -3434,7 +3434,7 @@ var Popover = function ($) {
       return this.element.getAttribute('data-content') || (typeof this.config.content === 'function' ? this.config.content.call(this.element) : this.config.content);
     };
 
-    // static
+    // ../static
 
     Popover._jQueryInterface = function _jQueryInterface(config) {
       return this.each(function () {

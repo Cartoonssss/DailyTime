@@ -17,7 +17,7 @@ $('.select2-show-search').select2({
 function selectClient (client) {
     if (!client.id) { return client.text; }
     var $client = $(
-      '<span><img src="../assets/images/users/' +  client.element.value.toLowerCase() + '.jpg" class="rounded-circle avatar-sm" /> '
+      '<span><img src="../static/assets/images/users/' +  client.element.value.toLowerCase() + '.jpg" class="rounded-circle avatar-sm" /> '
        + client.text +  '</span>'
    );
    return $client;
@@ -29,7 +29,7 @@ function selectCountry (country) {
     if (!country.id) { return country.text; }
     if(country.element.value.toLowerCase() !== 'def'){
         var $country = $(
-            '<span><img src="../assets/images/flags/' +  country.element.value.toLowerCase() + '.svg" class="br-5 avatar-sm" /> '
+            '<span><img src="../static/assets/images/flags/' +  country.element.value.toLowerCase() + '.svg" class="br-5 avatar-sm" /> '
             + country.text +  '</span>'
        );
        return $country;

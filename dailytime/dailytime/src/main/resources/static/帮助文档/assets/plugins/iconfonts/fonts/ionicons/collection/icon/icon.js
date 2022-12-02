@@ -100,9 +100,9 @@ export class Icon {
         // so let's just render an empty div for now
         return h("div", { class: "icon-inner" });
     }
-    static get is() { return "ion-icon"; }
-    static get encapsulation() { return "shadow"; }
-    static get properties() { return {
+    ../static get is() { return "ion-icon"; }
+    ../static get encapsulation() { return "shadow"; }
+    ../static get properties() { return {
         "ariaLabel": {
             "type": String,
             "attr": "aria-label",
@@ -170,7 +170,7 @@ export class Icon {
             "context": "window"
         }
     }; }
-    static get style() { return "/**style-placeholder:ion-icon:**/"; }
+    ../static get style() { return "/**style-placeholder:ion-icon:**/"; }
 }
 const requests = new Map();
 function getSvgContent(url) {

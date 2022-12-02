@@ -3,7 +3,7 @@ const axios = require('axios')
 const path = require('path')
 const fs = require('fs')
 
-const pkg = require('../package.json')
+const pkg = require('package.json')
 
 exec(`npm view ${pkg.name} version`, async (err, out) => {
   const latestVersion = out.trim()

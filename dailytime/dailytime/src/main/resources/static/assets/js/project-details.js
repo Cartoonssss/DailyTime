@@ -94,7 +94,7 @@
     function selectAgent(agent) {
         if (!agent.id) { return agent.text; }
         var $agent = $(
-            '<span><img src="../assets/images/users/' + agent.element.value.toLowerCase() + '.jpg" class="rounded-circle avatar-sm" /> '
+            '<span><img src="../static/assets/images/users/' + agent.element.value.toLowerCase() + '.jpg" class="rounded-circle avatar-sm" /> '
             + agent.text + '</span>'
         );
         return $agent;
@@ -110,7 +110,7 @@
     function selectClient(client) {
         if (!client.id) { return client.text; }
         var $client = $(
-            '<span><img src="../assets/images/users/' + client.element.value.toLowerCase() + '.jpg" class="rounded-circle avatar-sm" /> '
+            '<span><img src="../static/assets/images/users/' + client.element.value.toLowerCase() + '.jpg" class="rounded-circle avatar-sm" /> '
             + client.text + '</span>'
         );
         return $client;
