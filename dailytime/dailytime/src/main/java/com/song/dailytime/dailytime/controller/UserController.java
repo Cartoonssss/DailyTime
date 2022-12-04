@@ -51,11 +51,12 @@ public class UserController {
      */
     @RequestMapping(value = "/index", method = RequestMethod.GET)
     public String index() {
-        return "index";
+        return "users";
     }
 
     /**
      * 注册用户
+     *
      * @param param
      * @return
      */
@@ -85,6 +86,7 @@ public class UserController {
 
     /**
      * 用户登录
+     *
      * @param param
      * @return
      */
@@ -111,6 +113,7 @@ public class UserController {
 
     /**
      * 查询用户列表
+     *
      * @return
      */
     @PostMapping(value = "/queryUserList")
@@ -128,6 +131,7 @@ public class UserController {
 
     /**
      * 根据id删除用户
+     *
      * @param param
      * @return
      */
@@ -139,6 +143,7 @@ public class UserController {
 
     /**
      * 更新用户信息
+     *
      * @param userVO
      * @return
      */
@@ -150,10 +155,11 @@ public class UserController {
 
     /**
      * 根据id查询用户信息
+     *
      * @param id
      * @return
      */
-    @RequestMapping(value = "selectUserInfoById/{id}",method = RequestMethod.GET)
+    @RequestMapping(value = "selectUserInfoById/{id}", method = RequestMethod.GET)
     @ResponseBody
     public RestResponse selectUserInfoById(@PathVariable("id") String id) {
         RestResponse<UserVO> userInfo = new RestResponse<>();

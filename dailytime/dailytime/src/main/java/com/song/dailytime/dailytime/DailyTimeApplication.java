@@ -4,10 +4,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class DailytimeApplication {
+public class DailyTimeApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(DailytimeApplication.class, args);
+        SpringApplication.run(DailyTimeApplication.class, args);
     }
 
 }

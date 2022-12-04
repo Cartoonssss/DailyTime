@@ -47,4 +47,7 @@ public class UserServiceInterFaceImp implements UserServiceInterFace {
     public UserVO selectUserInfoById(String id) {
         return userDaoMapper.selectUserInfoById(id);
     }
+
+
+
 }

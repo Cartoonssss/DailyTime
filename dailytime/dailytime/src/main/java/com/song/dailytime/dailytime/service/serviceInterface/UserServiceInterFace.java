@@ -19,4 +19,5 @@ public interface UserServiceInterFace {
     int updateUserInfo(UserVO userVO);
 
     UserVO selectUserInfoById(String id);
+
 }

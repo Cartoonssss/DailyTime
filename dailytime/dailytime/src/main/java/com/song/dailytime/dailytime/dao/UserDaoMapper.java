@@ -29,4 +29,5 @@ public interface UserDaoMapper {
 
     //根据id查询用户信息
     UserVO selectUserInfoById(String id);
+
 }
