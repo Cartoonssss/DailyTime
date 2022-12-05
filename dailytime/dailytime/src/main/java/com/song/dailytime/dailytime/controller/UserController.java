@@ -1,5 +1,6 @@
 package com.song.dailytime.dailytime.controller;
 
+import com.github.pagehelper.PageHelper;
 import com.song.dailytime.dailytime.Entity.UserVO;
 import com.song.dailytime.dailytime.common.ResponseStatus;
 import com.song.dailytime.dailytime.common.RestResponse;
@@ -170,5 +171,24 @@ public class UserController {
             userInfo.setMsg("用户不存在！").setStatus(ResponseStatus.Error);
         }
         return userInfo;
+    }
+
+    /**
+     * 查询用户列表
+     *
+     * @return
+     */
+    @PostMapping(value = "/queryUserPagination")
+    @ResponseBody
+    public RestResponse queryUserPagination() {
+        RestResponse<List<UserVO>> restResponse = new RestResponse<>();
+        PageHelper.startPage(1, 2);
+        List<UserVO> userVOS = userServiceInterFace.queryUserList();
+        if (userVOS.size() > 0) {
+            restResponse.setData(userVOS).setStatus(ResponseStatus.Ok);
+        } else {
+            restResponse.setMsg("暂无用户").setStatus(ResponseStatus.Error);
+        }
+        return restResponse;
     }
 }
