@@ -178,11 +178,11 @@ public class UserController {
      *
      * @return
      */
-    @PostMapping(value = "/queryUserPagination")
+    @PostMapping(value = "/queryUserByPagination")
     @ResponseBody
-    public RestResponse queryUserPagination() {
+    public RestResponse queryUserByPagination(@RequestParam Integer pageNum,@RequestParam Integer pageSize) {
         RestResponse<List<UserVO>> restResponse = new RestResponse<>();
-        PageHelper.startPage(1, 3);
+        PageHelper.startPage(pageNum, pageSize);
         List<UserVO> userVOS = userServiceInterFace.queryUserList();
         if (userVOS.size() > 0) {
             restResponse.setData(userVOS).setStatus(ResponseStatus.Ok);

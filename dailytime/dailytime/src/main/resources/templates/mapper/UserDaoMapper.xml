@@ -24,6 +24,8 @@
         select * from `user` where username=(#{username}) and password=(#{password});
     </select>
 
+
+    <!--这里SQL语句末尾不要加分号结尾，这里要做分页，加了分号会报错-->
     <select id="queryUserList" resultType="com.song.dailytime.dailytime.Entity.UserVO">
         select * from `user`
     </select>
