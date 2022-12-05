@@ -1,122 +1,166 @@
-<!DOCTYPE html>
-<html lang="en">
-
+﻿<!doctype html>
+<html lang="en" dir="ltr" xmlns:javascript="http://www.w3.org/1999/xhtml">
 <head>
-  <!-- Required meta tags -->
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>Skydash Admin</title>
-  <!-- plugins:css -->
-  <link rel="stylesheet" href="../static/assetsvendors/feather/feather.css">
-  <link rel="stylesheet" href="../static/assetsvendors/ti-icons/css/themify-icons.css">
-  <link rel="stylesheet" href="../static/assetsvendors/css/vendor.bundle.base.css">
-  <!-- endinject -->
-  <!-- Plugin css for this page -->
-  <!-- End plugin css for this page -->
-  <!-- inject:css -->
-  <link rel="stylesheet" href="../static/assetscss/vertical-layout-light/style.css">
-  <!-- endinject -->
-  <link rel="shortcut icon" href="../static/assetsimages/favicon.png" />
+
+    <!-- META DATA -->
+    <meta charset="UTF-8">
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, user-scalable=0'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Noa – Bootstrap 5 Admin & Dashboard Template">
+    <meta name="author" content="Spruko Technologies Private Limited">
+    <meta name="keywords"
+          content="admin,admin dashboard,admin panel,admin template,bootstrap,clean,dashboard,flat,jquery,modern,responsive,premium admin templates,responsive admin,ui,ui kit.">
+
+    <!-- FAVICON -->
+    <link rel="shortcut icon" type="image/x-icon" href="../static/assets/images/brand/favicon.ico"/>
+
+    <!-- TITLE -->
+    <title>Noa – Bootstrap 5 Admin & Dashboard Template</title>
+
+    <!-- BOOTSTRAP CSS -->
+    <link id="style" href="../static/assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
+
+    <!-- STYLE CSS -->
+    <link href="../static/assets/css/style.css" rel="stylesheet"/>
+    <link href="../static/assets/css/skin-modes.css" rel="stylesheet"/>
+
+    <!--- FONT-ICONS CSS -->
+    <link href="../static/assets/css/icons.css" rel="stylesheet"/>
+
+    <link href="../static/assets/css/all.css" rel="stylesheet"/>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+
 </head>
 
-<body>
-  <div class="container-scroller">
-    <div class="container-fluid page-body-wrapper full-page-wrapper">
-      <div class="content-wrapper d-flex align-items-center auth px-0">
-        <div class="row w-100 mx-0">
-          <div class="col-lg-4 mx-auto">
-            <div class="auth-form-light text-left py-5 px-4 px-sm-5">
-              <div class="brand-logo">
-                <img src="../static/assetsimages/logo.svg" alt="logo">
-              </div>
+<body class="ltr login-img">
 
+<!-- GLOABAL LOADER -->
+<div id="global-loader">
+    <img src="../static/assets/images/loader.svg" class="loader-img" alt="Loader">
+</div>
+<!-- /GLOABAL LOADER -->
 
-              <form class="pt-3">
-                <div class="form-group">
-                  <input type="text" class="form-control form-control-lg" id="username" placeholder="Username">
-                </div>
-                <div class="form-group">
-                  <input type="password" class="form-control form-control-lg" id="password" placeholder="Password">
-                </div>
-                <div class="mt-3">
-                  <button type="button" class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn" onclick="userlogin()">登 录</button>
-                </div>
-                <div class="my-2 d-flex justify-content-between align-items-center">
-                  <div class="form-check">
-                    <label class="form-check-label text-muted">
-                      <input type="checkbox" class="form-check-input">
-                      记住密码
-                    </label>
-                  </div>
-                  <a href="#" class="auth-link text-black">忘记密码?</a>
-                </div>
-                <div class="mb-2">
-                  <button type="button" class="btn btn-block btn-facebook auth-form-btn">
-                    <i class="ti-facebook mr-2"></i>Connect using facebook
-                  </button>
-                </div>
-                <div class="text-center mt-4 font-weight-light">
-                  还没有账户? <a href="register.html" class="text-primary">创 建</a>
-                </div>
-              </form>
-            </div>
-          </div>
+<!-- PAGE -->
+<div class="page">
+    <div>
+        <!-- CONTAINER OPEN -->
+        <div class="col col-login mx-auto text-center">
+            <a href="index.html" class="text-center">
+                <img src="../static/assets/images/brand/logo.png" class="header-brand-img" alt="">
+            </a>
         </div>
-      </div>
-      <!-- content-wrapper ends -->
+        <div class="container-login100">
+            <div class="wrap-login100 p-0">
+                <div class="card-body">
+                    <form class="login100-form validate-form">
+									<span class="login100-form-title">
+										Login
+									</span>
+                        <div class="wrap-input100 validate-input"
+                             data-bs-validate="Valid email is required: ex@abc.xyz">
+                            <input class="input100" type="text" name="username" id="username" placeholder="username"
+                                   data-bs-validate="Username is required">
+                            <span class="focus-input100"></span>
+                            <span class="symbol-input100">
+											<i class="bi bi-person-fill"></i>
+										</span>
+                        </div>
+                        <div class="wrap-input100 validate-input" data-bs-validate="Password is required">
+                            <input class="input100" type="password" name="pass" id="password" placeholder="Password">
+                            <span class="focus-input100"></span>
+                            <span class="symbol-input100">
+											<i class="bi bi-key-fill"></i>
+										</span>
+                        </div>
+                        <div class="text-end pt-1">
+                            <p class="mb-0"><a href="forgot-password.html" class="text-primary ms-1">忘记密码?</a></p>
+                        </div>
+                        <div class="container-login100-form-btn">
+                            <a href="javascript:userLogin();" class="login100-form-btn btn-primary">
+                                Login
+                            </a>
+                        </div>
+                        <div class="text-center pt-3">
+                            <p class="text-dark mb-0">没有账号?<a href="register.html" class="text-primary ms-1">创建用户</a>
+                            </p>
+                        </div>
+                    </form>
+                </div>
+                <div class="card-footer">
+                    <div class="d-flex justify-content-center my-3">
+                        <a href="javascript:void(0)" class="social-login  text-center me-4">
+                            <i class="fa fa-google"></i>
+                        </a>
+                        <a href="javascript:void(0)" class="social-login  text-center me-4">
+                            <i class="fa fa-facebook"></i>
+                        </a>
+                        <a href="javascript:void(0)" class="social-login  text-center">
+                            <i class="fa fa-twitter"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- CONTAINER CLOSED -->
     </div>
-    <!-- page-body-wrapper ends -->
-  </div>
-  <!-- container-scroller -->
-  <!-- plugins:js -->
-  <script src="../static/assetsvendors/js/vendor.bundle.base.js"></script>
-  <!-- endinject -->
-  <!-- Plugin js for this page -->
-  <!-- End plugin js for this page -->
-  <!-- inject:js -->
-  <script src="../static/assetsjs/off-canvas.js"></script>
-  <script src="../static/assetsjs/hoverable-collapse.js"></script>
-  <script src="../static/assetsjs/template.js"></script>
-  <script src="../static/assetsjs/settings.js"></script>
-  <script src="../static/assetsjs/todolist.js"></script>
-  <script>
-    function userlogin() {
-      var dataSet = new Object();
-      var data = {
-        username: $("#username").val(),
-        password: $("#password").val(),
-      };
-      dataSet.username =$("#username").val();
-      dataSet.password =$("#password").val();
-      $.ajax({
-        type: 'POST', // method
-        url: 'userLogin',
-        //url       : 'list?username=kdevkr&password=kdevpass', //
-        async: 'false', // true
-        data: JSON.stringify(data), //
-        //date: dataSet,
-        processData: true, //
-        contentType: 'application/json', //
-        dataType  :'json',//将服务器返回的数据转换为指定为json类型
-        success: function (result) {
-          //responseJson(result);
-          console.log(result);
-          console.log("1111");
-          if (result.status=="200"){
-            window.open("/index","_self");
-          }else {
-            alert("账号或密码错误");
-            //window.open("/index","_self");
-          }
-        },
-        error: function (error) {
-          console.log("error", error);
-          //responseError(error);
-        }
-      });
-    }
-  </script>
-  <!-- endinject -->
-</body>
+</div>
+<!-- End PAGE -->
 
+
+<!-- BACKGROUND-IMAGE CLOSED -->
+
+<!-- JQUERY JS -->
+<script src="../static/assets/js/jquery.min.js"></script>
+
+<!-- BOOTSTRAP JS -->
+<script src="../static/assets/plugins/bootstrap/js/popper.min.js"></script>
+<script src="../static/assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+
+<!-- Perfect SCROLLBAR JS-->
+<script src="../static/assets/plugins/p-scroll/perfect-scrollbar.js"></script>
+
+<!-- STICKY JS -->
+<script src="../static/assets/js/sticky.js"></script>
+
+<!-- COLOR THEME JS -->
+<script src="../static/assets/js/themeColors.js"></script>
+
+<!-- CUSTOM JS -->
+<script src="../static/assets/js/custom.js"></script>
+<script>
+    function userLogin() {
+        var dataSet = new Object();
+        var data = {
+            username: $("#username").val(),
+            password: $("#password").val(),
+        };
+        dataSet.username = $("#username").val();
+        dataSet.password = $("#password").val();
+        $.ajax({
+            type: 'POST', // method
+            url: 'userLogin',
+            //url       : 'list?username=kdevkr&password=kdevpass', //
+            async: 'false', // true
+            data: JSON.stringify(data), //
+            //date: dataSet,
+            processData: true, //
+            contentType: 'application/json', //
+            dataType: 'json',//将服务器返回的数据转换为指定为json类型
+            success: function (result) {
+                //responseJson(result);
+                console.log(result);
+                if (result.status === 200) {
+                    window.open("/index", "_self");
+                } else {
+
+                    //window.open("/index","_self");
+                }
+            },
+            error: function (error) {
+                alert("账号或密码错误");
+            }
+        });
+    }
+</script>
+</body>
 </html>
