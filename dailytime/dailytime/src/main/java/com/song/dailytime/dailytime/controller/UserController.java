@@ -182,7 +182,7 @@ public class UserController {
     @ResponseBody
     public RestResponse queryUserPagination() {
         RestResponse<List<UserVO>> restResponse = new RestResponse<>();
-        PageHelper.startPage(1, 2);
+        PageHelper.startPage(1, 3);
         List<UserVO> userVOS = userServiceInterFace.queryUserList();
         if (userVOS.size() > 0) {
             restResponse.setData(userVOS).setStatus(ResponseStatus.Ok);
