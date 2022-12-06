@@ -80,7 +80,7 @@
                             </a>
                         </div>
                         <div class="text-center pt-3">
-                            <p class="text-dark mb-0">没有账号?<a href="register.html" class="text-primary ms-1">创建用户</a>
+                            <p class="text-dark mb-0">没有账号?<a href="javascript:createUser()" class="text-primary ms-1">创建用户</a>
                             </p>
                         </div>
                     </form>
@@ -128,13 +128,13 @@
 <script src="../static/assets/js/custom.js"></script>
 <script>
     function userLogin() {
-        var dataSet = new Object();
-        var data = {
+        const dataSet = {};
+        const data = {
             username: $("#username").val(),
             password: $("#password").val(),
         };
-        dataSet.username = $("#username").val();
-        dataSet.password = $("#password").val();
+        /*dataSet.username = $("#username").val();
+        dataSet.password = $("#password").val();*/
         $.ajax({
             type: 'POST', // method
             url: 'userLogin',
@@ -146,12 +146,10 @@
             contentType: 'application/json', //
             dataType: 'json',//将服务器返回的数据转换为指定为json类型
             success: function (result) {
-                //responseJson(result);
                 console.log(result);
                 if (result.status === 200) {
                     window.open("/index", "_self");
                 } else {
-
                     //window.open("/index","_self");
                 }
             },
@@ -159,6 +157,9 @@
                 alert("账号或密码错误");
             }
         });
+    }
+    function createUser() {
+        window.open("/", "_self");
     }
 </script>
 </body>
