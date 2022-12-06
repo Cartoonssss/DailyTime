@@ -5,6 +5,7 @@ import com.song.dailytime.dailytime.Entity.UserVO;
 import com.song.dailytime.dailytime.common.ResponseStatus;
 import com.song.dailytime.dailytime.common.RestResponse;
 import com.song.dailytime.dailytime.service.serviceInterface.UserServiceInterFace;
+import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
@@ -12,10 +13,7 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.List;
-import java.util.Map;
-import java.util.UUID;
+import java.util.*;
 
 @Controller
 public class UserController {
@@ -63,21 +61,30 @@ public class UserController {
      */
     @RequestMapping(value = "/userRegister", method = RequestMethod.POST)
     public String userRegister(@RequestBody Map<String, String> param) {
-        String username = param.get("username");
-        String password = param.get("password");
-        String email = param.get("email");
-        String telephone = param.get("telephone");
-        logger.info("=====username=====" + username);
-        logger.info("=====password=====" + password);
-        logger.info("=====email=====" + email);
-        logger.info("=====telephone=====" + telephone);
+        logger.info("=====username=====" + param.get("username"));
+        logger.info("=====password=====" + param.get("password"));
+        logger.info("=====email=====" + param.get("email"));
+        logger.info("=====telephone=====" + param.get("telephone"));
         UserVO userVO = new UserVO();
         String id = UUID.randomUUID().toString().replace("-", "");
         userVO.setId(id);
-        userVO.setUsername(username);
-        userVO.setPassword(password);
-        userVO.setEmail(email);
-        userVO.setTelephone(telephone);
+
+        /*Set<String> keys = param.keySet();
+        for (String key : keys) {
+            String s = param.get(key);
+        }*/
+        if (StringUtils.isNoneBlank(param.get("username"))) {
+            userVO.setUsername(param.get("username"));
+        }
+        if (StringUtils.isNoneBlank(param.get("password"))) {
+            userVO.setPassword(param.get("password"));
+        }
+        if (StringUtils.isNoneBlank(param.get("email"))) {
+            userVO.setEmail(param.get("email"));
+        }
+        if (StringUtils.isNoneBlank(param.get("telephone"))) {
+            userVO.setTelephone(param.get("telephone"));
+        }
         SimpleDateFormat registerTime = new SimpleDateFormat("yyyy-MM-dd:HH:mm:ss");
         String date = registerTime.format(new Date());
         userVO.setRegisterTime(date);
@@ -99,15 +106,15 @@ public class UserController {
         String password = param.get("password");
         logger.info("=====username=====" + username);
         UserVO userVO = userServiceInterFace.userLogin(username, password);
-        SimpleDateFormat currentTime = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-        String loginTime = currentTime.format(new Date(System.currentTimeMillis()));
-        userVO.setLastLoginTime(loginTime);
-        userServiceInterFace.updateUserLastLoginTime(userVO);
-        if (userVO != null) {
+        if (null!=userVO) {
+            SimpleDateFormat currentTime = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+            String loginTime = currentTime.format(new Date(System.currentTimeMillis()));
+            userVO.setLastLoginTime(loginTime);
+            userServiceInterFace.updateUserLastLoginTime(userVO);
             restResponse.setData(userVO).setStatus(ResponseStatus.Ok);
         } else {
             restResponse.setMsg("登录失败").setStatus(ResponseStatus.Error);
-            logger.error("登录失败");
+            logger.error("账号或密码错误，登录失败");
         }
         return restResponse;
     }
